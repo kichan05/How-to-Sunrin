@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "924248355319",
+    "project_id": "how-to-sunrin",
+    "storage_bucket": "how-to-sunrin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924248355319:android:e8408ff2e71efeaadc3ef2",
+        "android_client_info": {
+          "package_name": "com.edcan.howtosunrin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924248355319-9eh4jt4oea440264vb9r8e0e9tbbf7gp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC27S-hWHhKXZc4Ex3euDyokUqHh20Ppow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924248355319-9eh4jt4oea440264vb9r8e0e9tbbf7gp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
