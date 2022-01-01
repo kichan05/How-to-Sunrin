@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.screen.qna.QnAActivity
 import com.edcan.howtosunrin.model.DB
+import com.edcan.howtosunrin.screen.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -22,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
-            val intent = Intent(this@SplashActivity, QnAActivity::class.java)
+            val intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
         }
     }
