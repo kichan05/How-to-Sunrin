@@ -1,10 +1,10 @@
-package com.edcan.howtosunrin.activity.splash
+package com.edcan.howtosunrin.screen.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.edcan.howtosunrin.R
-import com.edcan.howtosunrin.activity.main.MainActivity
+import com.edcan.howtosunrin.screen.qanda.QnAActivity
 import com.edcan.howtosunrin.model.DB
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashActivity, QnAActivity::class.java)
             startActivity(intent)
         }
     }

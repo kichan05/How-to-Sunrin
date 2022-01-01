@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HowToSunrin">
         <activity
-            android:name=".activity.splash.SplashActivity"
+            android:name=".screen.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.main.MainActivity"
+            android:name=".screen.qanda.QnAActivity"
             android:exported="true">
         </activity>
     </application>
