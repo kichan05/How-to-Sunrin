@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.edcan.howtosunrin.R
-import com.edcan.howtosunrin.screen.qanda.QnAActivity
+import com.edcan.howtosunrin.screen.qna.QnAActivity
 import com.edcan.howtosunrin.model.DB
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

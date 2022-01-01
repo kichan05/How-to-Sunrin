@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screen.qanda.QnAActivity"
+            android:name=".screen.qna.QnAActivity"
             android:exported="true">
         </activity>
     </application>

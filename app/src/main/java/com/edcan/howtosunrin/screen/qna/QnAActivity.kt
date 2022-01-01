@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.screen.qanda
+package com.edcan.howtosunrin.screen.qna
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,9 +25,17 @@ class QnAActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
+        CoroutineScope(Dispatchers.IO).launch {
+            val questionList = viewModel.getAllQustion()
+
+            withContext(Dispatchers.Main){
+                viewModel.question.value = questionList[Random.nextInt(questionList.size)]
+            }
+        }
+
         binding.btnMainNextBtn.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
-                val questionList = db.getAllQuestion()
+                val questionList = viewModel.getAllQustion()
 
                 withContext(Dispatchers.Main){
                     viewModel.question.value = questionList[Random.nextInt(questionList.size)]
