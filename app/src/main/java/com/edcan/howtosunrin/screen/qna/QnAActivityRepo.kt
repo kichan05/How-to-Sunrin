@@ -1,8 +1,7 @@
 package com.edcan.howtosunrin.screen.qna
 
-import com.edcan.howtosunrin.model.Question
+import com.edcan.howtosunrin.model.qna.Question
 import com.edcan.howtosunrin.screen.splash.db
-import com.google.firebase.firestore.FirebaseFirestore
 
 class QnAActivityRepo : QnAActivityInterface{
 

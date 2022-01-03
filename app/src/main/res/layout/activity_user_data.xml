@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.edcan.howtosunrin.screen.userData.UserDataViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.userData.UserDataActivity">
+
+        <TextView
+            android:id="@+id/txt_userData_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="유저 정보 입력 화면"
+            android:textSize="32sp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/edt_userData_inputName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@={viewModel.name}"
+            android:hint="이름"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_userData_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/txt_userData_majorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="학과"
+
+            app:layout_constraintTop_toBottomOf="@id/edt_userData_inputName"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_userData_choiceMajor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_userData_majorTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <CheckBox
+            android:id="@+id/checkBoc_userData_choiceNewbi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:checked="@={viewModel.newbi}"
+
+            app:layout_constraintTop_toBottomOf="@id/spinner_userData_choiceMajor"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="신입생입니다."
+
+            app:layout_constraintTop_toTopOf="@id/checkBoc_userData_choiceNewbi"
+            app:layout_constraintBottom_toBottomOf="@id/checkBoc_userData_choiceNewbi"
+            app:layout_constraintStart_toEndOf="@+id/checkBoc_userData_choiceNewbi"
+            />
+
+
+        <Button
+            android:id="@+id/btn_userData_inputEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="입력 완료"
+            android:textSize="20sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

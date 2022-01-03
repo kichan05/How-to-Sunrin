@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HowToSunrin">
         <activity
+            android:name=".screen.userData.UserDataActivity"
+            android:exported="false" />
+        <activity
             android:name=".screen.main.MainActivity"
             android:exported="false" />
         <activity
@@ -23,7 +26,7 @@
         </activity>
         <activity
             android:name=".screen.qna.QnAActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

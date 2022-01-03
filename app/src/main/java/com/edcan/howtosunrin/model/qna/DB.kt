@@ -1,9 +1,9 @@
-package com.edcan.howtosunrin.model
+package com.edcan.howtosunrin.model.qna
 
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 
-class DB : questionDB{
+class DB : questionDB {
     val db = FirebaseFirestore.getInstance()
     override suspend fun getAllQuestion(): List<Question> {
         val quests = mutableListOf<Question>()
