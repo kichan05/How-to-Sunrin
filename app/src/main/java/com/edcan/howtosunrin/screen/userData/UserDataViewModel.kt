@@ -38,4 +38,4 @@ class UserDataViewModel : ViewModel() {
         return SimpleDateFormat("yyyy-MM-dd-yy-mm-ss").format(Date()) + "-${Random().nextInt(100000000)}"
     }
 
-}//2020-03-11-02-13-21-1212
+}

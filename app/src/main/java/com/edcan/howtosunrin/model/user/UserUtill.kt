@@ -1,10 +1,10 @@
 package com.edcan.howtosunrin.model.user
 
 object UserUtill {
-    val ID = 0
-    val SW = 1
-    val IM = 2
-    val CD = 3
+    val ID = 1
+    val SW = 2
+    val IM = 3
+    val CD = 4
 
     val ResultSuccess = 101
     val ResultFail = 102
