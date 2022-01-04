@@ -31,9 +31,8 @@ class SplashActivity : AppCompatActivity() {
 
             val userId = SharedUtil.pref.getString(SharedUtil.keyUserId, "none")
 
-            delay(3000)
-
             if(userId == "none"){ //처음 실행인 경우
+                delay(3000)
                 val intent = Intent(this@SplashActivity, UserDataActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -42,6 +41,9 @@ class SplashActivity : AppCompatActivity() {
 
                 val userData = userDB.getUserDataById(userId!!)
                 intent.putExtra("userData", userData)
+
+                Log.d("userData", userId)
+                Log.d("userData", userData.toString())
 
                 startActivity(intent)
                 finish()

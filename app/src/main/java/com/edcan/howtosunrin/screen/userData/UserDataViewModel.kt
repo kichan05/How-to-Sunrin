@@ -18,13 +18,15 @@ class UserDataViewModel : ViewModel() {
     val major = MutableLiveData(0)
     val newbie = MutableLiveData(false)
 
+    lateinit var userData : User
+
     suspend fun saveUserData() : Int{
 
         val userId = getRandomUserId()
         SharedUtil.editor.putString(SharedUtil.keyUserId, userId)
         SharedUtil.editor.apply()
 
-        val userData = User(
+        userData = User(
             name = name.value!!,
             major = major.value!!,
             userID = userId,

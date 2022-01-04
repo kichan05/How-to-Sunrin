@@ -67,6 +67,7 @@ class UserDataActivity : AppCompatActivity() {
                         Toast.makeText(this@UserDataActivity, "유저 등록에 성했습니다.", Toast.LENGTH_LONG).show()
                         
                         val intent = Intent(this@UserDataActivity, MainActivity::class.java)
+                        intent.putExtra("userData", viewModel.userData)
                         startActivity(intent)
                         finish()
                     }   else{

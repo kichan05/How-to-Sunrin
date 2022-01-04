@@ -47,6 +47,8 @@
             android:text="다음"
             android:textSize="24sp"
 
+            android:onClick="@{() -> viewModel.question()}"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -22,7 +22,7 @@ class UserDB : UserDBInterface{
         db.collection("user").document(userId).get()
             .addOnSuccessListener {
                 result = it.toObject(User::class.java)
-            }
+            }.await()
 
 
         return result
