@@ -36,6 +36,7 @@ class SplashActivity : AppCompatActivity() {
             if(userId == "none"){ //처음 실행인 경우
                 val intent = Intent(this@SplashActivity, UserDataActivity::class.java)
                 startActivity(intent)
+                finish()
             }   else{ //두번째 이상 실행인 경우
                 val intent = Intent(this@SplashActivity, MainActivity::class.java)
 
@@ -43,6 +44,7 @@ class SplashActivity : AppCompatActivity() {
                 intent.putExtra("userData", userData)
 
                 startActivity(intent)
+                finish()
             }
 
 

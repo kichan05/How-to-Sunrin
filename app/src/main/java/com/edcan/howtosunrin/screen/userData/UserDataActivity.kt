@@ -12,7 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityUserDataBinding
-import com.edcan.howtosunrin.model.user.UserUtill
+import com.edcan.howtosunrin.model.user.UserUtil
 import com.edcan.howtosunrin.screen.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -63,7 +63,7 @@ class UserDataActivity : AppCompatActivity() {
                 val result = viewModel.saveUserData()
 
                 withContext(Dispatchers.Main){
-                    if(result == UserUtill.ResultSuccess){
+                    if(result == UserUtil.ResultSuccess){
                         Toast.makeText(this@UserDataActivity, "유저 등록에 성했습니다.", Toast.LENGTH_LONG).show()
                         
                         val intent = Intent(this@UserDataActivity, MainActivity::class.java)

@@ -1,6 +1,6 @@
 package com.edcan.howtosunrin.model.user
 
-object UserUtill {
+object UserUtil {
     val ID = 1
     val SW = 2
     val IM = 3

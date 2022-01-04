@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.edcan.howtosunrin.model.SharedUtil
 import com.edcan.howtosunrin.model.user.User
-import com.edcan.howtosunrin.model.user.UserUtill
+import com.edcan.howtosunrin.model.user.UserUtil
 import com.edcan.howtosunrin.screen.splash.userDB
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -16,7 +16,7 @@ import java.util.*
 class UserDataViewModel : ViewModel() {
     val name = MutableLiveData("")
     val major = MutableLiveData(0)
-    val newbi = MutableLiveData(false)
+    val newbie = MutableLiveData(false)
 
     suspend fun saveUserData() : Int{
 
@@ -28,7 +28,7 @@ class UserDataViewModel : ViewModel() {
             name = name.value!!,
             major = major.value!!,
             userID = userId,
-            newbi = newbi.value!!
+            newbie = newbie.value!!
         )
 
         return userDB.saveUserData(userData)

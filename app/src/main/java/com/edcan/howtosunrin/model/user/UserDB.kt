@@ -7,11 +7,11 @@ class UserDB : UserDBInterface{
     val db = FirebaseFirestore.getInstance()
 
     override suspend fun saveUserData(userData: User) : Int {
-        var result : Int = UserUtill.ResultFail
+        var result : Int = UserUtil.ResultFail
 
         db.collection("user").document(userData.userID).set(userData)
             .addOnSuccessListener {
-                result = UserUtill.ResultSuccess
+                result = UserUtil.ResultSuccess
             }.await()
 
         return result
