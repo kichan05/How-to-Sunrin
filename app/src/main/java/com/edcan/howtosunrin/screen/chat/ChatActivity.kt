@@ -9,7 +9,6 @@ import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityGroupChatBinding
 import com.edcan.howtosunrin.model.SharedUtil
 import com.edcan.howtosunrin.model.chat.Chat
-import com.edcan.howtosunrin.model.chat.ChatDB
 import com.edcan.howtosunrin.model.chat.ChatUtil
 import com.edcan.howtosunrin.screen.chat.recycler.GroupChatRecyclerAdpter
 import com.edcan.howtosunrin.screen.splash.chatDB
@@ -20,16 +19,16 @@ import kotlinx.coroutines.withContext
 import java.util.*
 
 
-class GroupChatActivity : AppCompatActivity() {
+class ChatActivity : AppCompatActivity() {
     lateinit var binding : ActivityGroupChatBinding
-    lateinit var viewModel: GroupChatActivityViewModel
+    lateinit var viewModel: ChatActivityViewModel
     lateinit var groupChat_RecyclerAdapter: GroupChatRecyclerAdpter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_group_chat)
-        viewModel = ViewModelProvider(this).get(GroupChatActivityViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ChatActivityViewModel::class.java)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
@@ -38,24 +37,7 @@ class GroupChatActivity : AppCompatActivity() {
         groupChat_RecyclerAdapter = GroupChatRecyclerAdpter(this)
         binding.recyclerGroupchat.adapter = groupChat_RecyclerAdapter
 
-//        var LastchatData : MutableList<Chat>? = null
-
-//        CoroutineScope(Dispatchers.Main).launch {
-//            while(true) {
-//                val chatData = viewModel.getChatData()
-//                if (LastchatData != chatData) {
-//                    groupChat_RecyclerAdapter.data.clear()
-//                    LastchatData = chatData
-//
-//                    for (data in chatData) {
-//                        groupChat_RecyclerAdapter.data.add(data)
-//                    }
-//                    groupChat_RecyclerAdapter.notifyDataSetChanged()
-//                }
-//            }
-//        }
-
-        chatDB.db.collection("ChatGroup")
+        chatDB.db.collection("ChatGroup").orderBy("timeStamp")
             .addSnapshotListener { value, error ->
                 if(error != null){
                     Toast.makeText(this, "채팅 에러 발생", Toast.LENGTH_LONG).show()
@@ -77,7 +59,7 @@ class GroupChatActivity : AppCompatActivity() {
                     chatList.add(doc.toObject(Chat::class.java))
                 }
 
-                groupChat_RecyclerAdapter.data = chatList
+                groupChat_RecyclerAdapter.chatData = chatList
                 groupChat_RecyclerAdapter.notifyDataSetChanged()
             }
 

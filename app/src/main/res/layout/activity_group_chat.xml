@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.edcan.howtosunrin.screen.chat.GroupChatActivityViewModel" />
+            type="com.edcan.howtosunrin.screen.chat.ChatActivityViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

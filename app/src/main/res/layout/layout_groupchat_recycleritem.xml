@@ -5,17 +5,17 @@
     android:layout_height="40dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:background="@color/white"
-    >
+    android:background="@color/white">
 
     <TextView
-        android:id="@+id/txt_userId"
+        android:id="@+id/txt_userName"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="userid"
         android:textSize="15sp"
         android:textColor="@color/black"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,24 +25,19 @@
         android:id="@+id/txt_content"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+
         android:layout_marginHorizontal="10dp"
+
         android:gravity="start|center"
         android:text="예시 텍스트"
         android:textColor="@color/black"
         android:textSize="14sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintStart_toEndOf="@+id/txt_userId"
+        app:layout_constraintStart_toEndOf="@+id/txt_userName"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

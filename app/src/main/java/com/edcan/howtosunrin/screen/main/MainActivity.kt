@@ -6,9 +6,8 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityMainBinding
-import com.edcan.howtosunrin.databinding.ActivityQnaBinding
 import com.edcan.howtosunrin.model.user.User
-import com.edcan.howtosunrin.screen.chat.GroupChatActivity
+import com.edcan.howtosunrin.screen.chat.ChatActivity
 import com.edcan.howtosunrin.screen.qna.QnAActivity
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnMainGotoGroupChat.setOnClickListener {
-            val intent = Intent(this, GroupChatActivity::class.java)
+            val intent = Intent(this, ChatActivity::class.java)
             intent.putExtra("userData", currentUserData)
             startActivity(intent)
         }

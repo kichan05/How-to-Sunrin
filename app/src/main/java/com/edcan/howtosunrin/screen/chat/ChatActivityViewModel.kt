@@ -6,7 +6,7 @@ import com.edcan.howtosunrin.model.user.User
 import com.edcan.howtosunrin.screen.splash.chatDB
 import java.util.*
 
-class GroupChatActivityViewModel: ViewModel() {
+class ChatActivityViewModel: ViewModel() {
     var userData = MutableLiveData(User())
     val content = MutableLiveData("")
 
