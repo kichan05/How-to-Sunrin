@@ -8,3 +8,5 @@ object SharedUtil {
 
     val keyUserId = "userId"
 }
+
+//SharedPreferences에 저장하는 값들을 다루는 오브젝트
