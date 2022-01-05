@@ -27,6 +27,10 @@
         <activity
             android:name=".screen.qna.QnAActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".screen.chat.GroupChatActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
