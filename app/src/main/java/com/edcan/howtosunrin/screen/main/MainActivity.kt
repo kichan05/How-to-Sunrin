@@ -8,7 +8,6 @@ import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityMainBinding
 import com.edcan.howtosunrin.databinding.ActivityQnaBinding
 import com.edcan.howtosunrin.model.user.User
-import com.edcan.howtosunrin.screen.chat.GroupChatActivity
 import com.edcan.howtosunrin.screen.qna.QnAActivity
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
@@ -23,11 +22,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnMainGotoQnA.setOnClickListener {
             val intent = Intent(this, QnAActivity::class.java)
             intent.putExtra("userData", currentUserData)
-            startActivity(intent)
-        }
-
-        binding.btnMainGotoGroupChat.setOnClickListener {
-            val intent = Intent(this, GroupChatActivity::class.java)
             startActivity(intent)
         }
     }

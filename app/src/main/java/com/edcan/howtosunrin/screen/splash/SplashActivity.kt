@@ -4,15 +4,16 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.model.SharedUtil
-import com.edcan.howtosunrin.model.qna.QnADB
+import com.edcan.howtosunrin.model.qna.DB
 import com.edcan.howtosunrin.model.user.UserDB
 import com.edcan.howtosunrin.screen.main.MainActivity
 import com.edcan.howtosunrin.screen.userData.UserDataActivity
 import kotlinx.coroutines.*
 
-lateinit var db : QnADB
+lateinit var db : DB
 lateinit var userDB: UserDB
 
 class SplashActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        db = QnADB()
+        db = DB()
         userDB = UserDB()
 
         SharedUtil.pref = getSharedPreferences("pref", Activity.MODE_PRIVATE)
@@ -40,6 +41,9 @@ class SplashActivity : AppCompatActivity() {
 
                 val userData = userDB.getUserDataById(userId!!)
                 intent.putExtra("userData", userData)
+
+                Log.d("userData", userId)
+                Log.d("userData", userData.toString())
 
                 startActivity(intent)
                 finish()
