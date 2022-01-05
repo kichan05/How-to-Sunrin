@@ -8,8 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityGroupChatBinding
 import com.edcan.howtosunrin.model.SharedUtil
-import com.edcan.howtosunrin.model.user.UserDB
-import com.edcan.howtosunrin.screen.splash.userDB
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
