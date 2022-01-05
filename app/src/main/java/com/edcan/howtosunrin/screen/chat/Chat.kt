@@ -5,7 +5,7 @@ import java.sql.Timestamp
 import java.util.*
 
 data class Chat (
-    val userID : String = "",
+    val userId : String = "",
     val content : String = "",
-    val timestamp: Date = Date()
+    val timestamp: String = ""
 ) : Serializable

@@ -20,4 +20,17 @@ class ChatDB : ChatDBInterface {
         return result
     }
 
+    override suspend fun getChatData(): MutableList<Chat> {
+        var datas: MutableList<Chat> = mutableListOf()
+        db.collection("ChatGroup").get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val chatdata = document.toObject(Chat::class.java)
+                    datas.add(chatdata)
+                }
+            }.await()
+
+        return datas
+    }
+
 }

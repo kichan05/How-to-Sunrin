@@ -5,4 +5,5 @@ import java.sql.Timestamp
 
 interface ChatDBInterface {
     suspend fun sendChat(chatData : Chat): Int
+    suspend fun getChatData(): MutableList<Chat>
 }

@@ -8,12 +8,15 @@ class GroupChatActivityViewModel: ViewModel() {
 
     lateinit var chatData : Chat
 
-    suspend fun sendChat(userId : String, timestamp : Date) : Int{
+    suspend fun sendChat(userId : String, timestamp : String) : Int{
         chatData = Chat(
             userId,
             content.value.toString(),
             timestamp
         )
         return chatDB.sendChat(chatData)
+    }
+    suspend fun getChatData(): MutableList<Chat> {
+        return chatDB.getChatData()
     }
 }
