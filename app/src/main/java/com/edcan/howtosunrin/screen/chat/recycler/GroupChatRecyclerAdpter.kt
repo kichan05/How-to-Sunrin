@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.edcan.howtosunrin.R
+import com.edcan.howtosunrin.model.chat.Chat
 
 class GroupChatRecyclerAdpter(private val context: Context) : RecyclerView.Adapter<GroupChatRecyclerAdpter.GroupChatViewHolder>() {
 
-    var data = mutableListOf<GroupChatViewData>()
+    var data = mutableListOf<Chat>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupChatRecyclerAdpter.GroupChatViewHolder {
         val view = LayoutInflater.from(context).inflate(
@@ -39,7 +40,7 @@ class GroupChatRecyclerAdpter(private val context: Context) : RecyclerView.Adapt
         }
 
 
-        fun onBind(data: GroupChatViewData) {
+        fun onBind(data: Chat) {
             userId.text = data.userId
             content.text = data.content
         }

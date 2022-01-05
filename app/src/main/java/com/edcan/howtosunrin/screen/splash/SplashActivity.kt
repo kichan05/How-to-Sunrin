@@ -7,22 +7,25 @@ import android.os.Bundle
 import android.util.Log
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.model.SharedUtil
+import com.edcan.howtosunrin.model.chat.ChatDB
 import com.edcan.howtosunrin.model.qna.DB
 import com.edcan.howtosunrin.model.user.UserDB
 import com.edcan.howtosunrin.screen.main.MainActivity
 import com.edcan.howtosunrin.screen.userData.UserDataActivity
 import kotlinx.coroutines.*
 
-lateinit var db : DB
+lateinit var qnaDB : DB
 lateinit var userDB: UserDB
+lateinit var chatDB: ChatDB
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        db = DB()
+        qnaDB = DB()
         userDB = UserDB()
+        chatDB = ChatDB()
 
         SharedUtil.pref = getSharedPreferences("pref", Activity.MODE_PRIVATE)
         SharedUtil.editor = SharedUtil.pref.edit()

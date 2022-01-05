@@ -5,13 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.edcan.howtosunrin.R
-import com.edcan.howtosunrin.screen.splash.db
 import com.edcan.howtosunrin.databinding.ActivityQnaBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlin.random.Random
 
 class QnAActivity : AppCompatActivity() {
     lateinit var binding : ActivityQnaBinding

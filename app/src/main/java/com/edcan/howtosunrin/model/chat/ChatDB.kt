@@ -1,10 +1,7 @@
-package com.edcan.howtosunrin.screen.chat
+package com.edcan.howtosunrin.model.chat
 
-import com.edcan.howtosunrin.model.user.User
-import com.edcan.howtosunrin.model.user.UserUtil
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
-import java.sql.Timestamp
 
 class ChatDB : ChatDBInterface {
     val db = FirebaseFirestore.getInstance()

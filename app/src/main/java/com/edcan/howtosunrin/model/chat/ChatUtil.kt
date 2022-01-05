@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.screen.chat
+package com.edcan.howtosunrin.model.chat
 
 object ChatUtil {
     val ResultSuccess = 101

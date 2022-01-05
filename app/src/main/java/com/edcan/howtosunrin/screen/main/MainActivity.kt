@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnMainGotoGroupChat.setOnClickListener {
             val intent = Intent(this, GroupChatActivity::class.java)
+            intent.putExtra("userData", currentUserData)
             startActivity(intent)
         }
     }
