@@ -36,6 +36,8 @@ class UserDataViewModel : ViewModel() {
         return userDB.saveUserData(userData)
     }
 
+
+
     private fun getRandomUserId(): String {
         return SimpleDateFormat("yyyy-MM-dd-yy-mm-ss").format(Date()) + "-${Random().nextInt(100000000)}"
     }

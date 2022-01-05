@@ -64,7 +64,7 @@ class UserDataActivity : AppCompatActivity() {
 
                 withContext(Dispatchers.Main){
                     if(result == UserUtil.ResultSuccess){
-                        Toast.makeText(this@UserDataActivity, "유저 등록에 성했습니다.", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@UserDataActivity, "유저 등록에 성공했습니다.", Toast.LENGTH_LONG).show()
                         
                         val intent = Intent(this@UserDataActivity, MainActivity::class.java)
                         intent.putExtra("userData", viewModel.userData)
