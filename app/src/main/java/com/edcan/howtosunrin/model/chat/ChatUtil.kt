@@ -1,6 +1,8 @@
 package com.edcan.howtosunrin.model.chat
 
 object ChatUtil {
-    val ResultSuccess = 101
-    val ResultFail = 102
+    const val ResultSuccess = 101
+    const val ResultFail = 102
+
+    const val groupChatCollection = "ChatGroup"
 }

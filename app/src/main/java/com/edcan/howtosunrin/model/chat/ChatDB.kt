@@ -9,7 +9,7 @@ class ChatDB : ChatDBInterface {
     override suspend fun sendChat(chatData : Chat): Int {
         var result : Int = ChatUtil.ResultFail
 
-        db.collection("ChatGroup").document().set(chatData)
+        db.collection(ChatUtil.groupChatCollection).document().set(chatData)
             .addOnSuccessListener {
                 result = ChatUtil.ResultSuccess
             }.await()
@@ -19,7 +19,7 @@ class ChatDB : ChatDBInterface {
 
     override suspend fun getChatData(): MutableList<Chat> {
         var datas: MutableList<Chat> = mutableListOf()
-        db.collection("ChatGroup").get()
+        db.collection(ChatUtil.groupChatCollection).get()
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val chatdata = document.toObject(Chat::class.java)

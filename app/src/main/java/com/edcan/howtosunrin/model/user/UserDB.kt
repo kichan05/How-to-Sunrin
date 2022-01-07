@@ -9,7 +9,7 @@ class UserDB : UserDBInterface{
     override suspend fun saveUserData(userData: User) : Int {
         var result : Int = UserUtil.ResultFail
 
-        db.collection("user").document(userData.userID).set(userData)
+        db.collection(UserUtil.userCollection).document(userData.userID).set(userData)
             .addOnSuccessListener {
                 result = UserUtil.ResultSuccess
             }.await()
@@ -19,7 +19,7 @@ class UserDB : UserDBInterface{
 
     override suspend fun getUserDataById(userId: String): User? {
         var result : User? = null
-        db.collection("user").document(userId).get()
+        db.collection(UserUtil.userCollection).document(userId).get()
             .addOnSuccessListener {
                 result = it.toObject(User::class.java)
             }.await()
