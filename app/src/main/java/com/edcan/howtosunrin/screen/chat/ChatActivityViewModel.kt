@@ -1,8 +1,8 @@
 package com.edcan.howtosunrin.screen.chat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.edcan.howtosunrin.model.chat.Chat
-import com.edcan.howtosunrin.model.user.User
+import com.edcan.howtosunrin.utill.chat.Chat
+import com.edcan.howtosunrin.utill.user.User
 import com.edcan.howtosunrin.screen.splash.chatDB
 import java.util.*
 

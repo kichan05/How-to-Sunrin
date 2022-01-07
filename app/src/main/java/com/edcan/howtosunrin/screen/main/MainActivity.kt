@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityMainBinding
-import com.edcan.howtosunrin.model.user.User
+import com.edcan.howtosunrin.utill.user.User
 import com.edcan.howtosunrin.screen.chat.ChatActivity
 import com.edcan.howtosunrin.screen.qna.QnAActivity
 class MainActivity : AppCompatActivity() {

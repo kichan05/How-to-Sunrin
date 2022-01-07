@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.model
+package com.edcan.howtosunrin.utill
 
 import android.content.SharedPreferences
 

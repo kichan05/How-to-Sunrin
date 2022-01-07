@@ -3,7 +3,6 @@ package com.edcan.howtosunrin.screen.userData
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -12,7 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityUserDataBinding
-import com.edcan.howtosunrin.model.user.UserUtil
+import com.edcan.howtosunrin.utill.user.UserUtil
 import com.edcan.howtosunrin.screen.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

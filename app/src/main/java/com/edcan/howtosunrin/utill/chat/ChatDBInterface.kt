@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.model.chat
+package com.edcan.howtosunrin.utill.chat
 
 interface ChatDBInterface {
     suspend fun sendChat(chatData : Chat): Int

@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.edcan.howtosunrin.R
-import com.edcan.howtosunrin.model.chat.Chat
-import com.edcan.howtosunrin.model.user.User
+import com.edcan.howtosunrin.utill.chat.Chat
+import com.edcan.howtosunrin.utill.user.User
 import com.edcan.howtosunrin.screen.splash.userDB
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

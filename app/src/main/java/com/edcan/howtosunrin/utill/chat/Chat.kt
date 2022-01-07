@@ -1,7 +1,6 @@
-package com.edcan.howtosunrin.model.chat
+package com.edcan.howtosunrin.utill.chat
 
 import java.io.Serializable
-import java.sql.Timestamp
 import java.util.*
 
 data class Chat (

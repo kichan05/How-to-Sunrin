@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.model.chat
+package com.edcan.howtosunrin.utill.chat
 
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await

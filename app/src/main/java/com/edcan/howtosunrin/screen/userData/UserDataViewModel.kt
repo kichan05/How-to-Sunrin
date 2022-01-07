@@ -1,16 +1,11 @@
 package com.edcan.howtosunrin.screen.userData
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.edcan.howtosunrin.model.SharedUtil
-import com.edcan.howtosunrin.model.user.User
-import com.edcan.howtosunrin.model.user.UserUtil
+import com.edcan.howtosunrin.utill.SharedUtil
+import com.edcan.howtosunrin.utill.user.User
 import com.edcan.howtosunrin.screen.splash.userDB
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.util.*
 
 class UserDataViewModel : ViewModel() {

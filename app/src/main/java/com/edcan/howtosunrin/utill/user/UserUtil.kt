@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.model.user
+package com.edcan.howtosunrin.utill.user
 
 object UserUtil {
     // 학과별 상수

@@ -7,9 +7,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityGroupChatBinding
-import com.edcan.howtosunrin.model.SharedUtil
-import com.edcan.howtosunrin.model.chat.Chat
-import com.edcan.howtosunrin.model.chat.ChatUtil
+import com.edcan.howtosunrin.utill.SharedUtil
+import com.edcan.howtosunrin.utill.chat.Chat
+import com.edcan.howtosunrin.utill.chat.ChatUtil
 import com.edcan.howtosunrin.screen.chat.recycler.GroupChatRecyclerAdpter
 import com.edcan.howtosunrin.screen.splash.chatDB
 import kotlinx.coroutines.CoroutineScope

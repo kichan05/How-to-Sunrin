@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.model.qna
+package com.edcan.howtosunrin.utill.qna
 
 import java.io.Serializable
 

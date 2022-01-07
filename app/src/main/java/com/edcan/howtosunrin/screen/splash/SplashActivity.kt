@@ -5,11 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatDelegate
 import com.edcan.howtosunrin.R
-import com.edcan.howtosunrin.model.SharedUtil
-import com.edcan.howtosunrin.model.chat.ChatDB
-import com.edcan.howtosunrin.model.qna.DB
-import com.edcan.howtosunrin.model.user.UserDB
+import com.edcan.howtosunrin.utill.SharedUtil
+import com.edcan.howtosunrin.utill.chat.ChatDB
+import com.edcan.howtosunrin.utill.qna.DB
+import com.edcan.howtosunrin.utill.user.UserDB
 import com.edcan.howtosunrin.screen.main.MainActivity
 import com.edcan.howtosunrin.screen.userData.UserDataActivity
 import kotlinx.coroutines.*
@@ -22,6 +23,8 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         qnaDB = DB()
         userDB = UserDB()

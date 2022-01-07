@@ -1,6 +1,6 @@
-package com.edcan.howtosunrin.model.user
+package com.edcan.howtosunrin.utill.user
 
-import com.edcan.howtosunrin.model.user.UserUtil.SW
+import com.edcan.howtosunrin.utill.user.UserUtil.SW
 import java.io.Serializable
 
 data class User(

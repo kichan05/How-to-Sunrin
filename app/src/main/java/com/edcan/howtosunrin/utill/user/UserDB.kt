@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.model.user
+package com.edcan.howtosunrin.utill.user
 
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await

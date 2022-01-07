@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.model.user
+package com.edcan.howtosunrin.utill.user
 
 interface UserDBInterface {
     suspend fun saveUserData(userData: User) : Int //User클래스를 받고 해당 유저 정보를 저장한다.

@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.model.chat
+package com.edcan.howtosunrin.utill.chat
 
 object ChatUtil {
     const val ResultSuccess = 101
