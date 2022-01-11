@@ -36,6 +36,7 @@ class ChatActivity : AppCompatActivity() {
 
         groupChat_RecyclerAdapter = GroupChatRecyclerAdpter(this)
         binding.recyclerGroupchat.adapter = groupChat_RecyclerAdapter
+        //binding.recyclerGroupchat.scrollToPosition(groupChat_RecyclerAdapter.itemCount)
 
         chatDB.db.collection("ChatGroup").orderBy("timeStamp")
             .addSnapshotListener { value, error ->
@@ -47,7 +48,7 @@ class ChatActivity : AppCompatActivity() {
                 }
 
                 if(value == null){
-                    Toast.makeText(this, "체칭 값이 없습니다.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "채팅 값이 없습니다.", Toast.LENGTH_LONG).show()
                     finish()
 
                     return@addSnapshotListener

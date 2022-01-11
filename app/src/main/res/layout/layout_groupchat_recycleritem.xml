@@ -2,23 +2,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:background="@color/white">
+    android:background="@color/white"
+
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="5dp"
+    >
 
     <TextView
         android:id="@+id/txt_userName"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         android:gravity="center"
         android:text="userid"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:textColor="@color/black"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
 
 
     <TextView
@@ -26,18 +31,25 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
 
-        android:layout_marginHorizontal="10dp"
+        android:maxWidth="250dp"
 
-        android:gravity="start|center"
-        android:text="예시 텍스트"
+        android:text="EDCAN은 정말 최고야  EDCAN은 정말 최고야  EDCAN은 정말 최고야  EDCAN은 정말 최고야  EDCAN은 정말 최고야  "
         android:textColor="@color/black"
         android:textSize="14sp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="start|center"
 
-        app:layout_constraintStart_toEndOf="@+id/txt_userName"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/default_round_10"
+        android:backgroundTint="@color/opponentChatColor"
+
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="10dp"
+
+        android:layout_marginTop="4dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_userName"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

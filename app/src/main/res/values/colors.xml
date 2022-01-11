@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="base_Gray">#E9E9E9</color>
+    <color name="gray">#C4C4C4</color>
+    <color name="opponentChatColor">#D3D6DB</color>
     <color name="EDCAN">#00B8D4</color>
 </resources>

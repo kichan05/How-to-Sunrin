@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -12,35 +13,120 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/message"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_chat_appBar"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
 
-            android:text="@={viewModel.content}"
+            android:paddingVertical="10dp"
+            android:background="@color/white"
+            android:elevation="15dp"
 
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/btn_gchat_send"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:text="전송"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/message" />
+            <ImageView
+                android:id="@+id/img_chat_prevBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_arrow_left"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="단체 채팅"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto_black"
+                android:textColor="@color/black"
+
+                app:layout_constraintTop_toTopOf="@id/img_chat_prevBtn"
+                app:layout_constraintBottom_toBottomOf="@id/img_chat_prevBtn"
+                app:layout_constraintStart_toEndOf="@id/img_chat_prevBtn"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_edcan"
+
+                android:layout_marginEnd="16dp"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_groupchat"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="vertical"
+
+            android:backgroundTint="#f7f7f7"
+
+            tools:listitem="@layout/layout_groupchat_recycleritem"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:stackFromEnd="true"
+
+            app:layout_constraintTop_toBottomOf="@id/constraint_chat_appBar"
+            app:layout_constraintBottom_toTopOf="@id/constraint_chat_inputBar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_gchat_send" />
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_chat_inputBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <EditText
+                android:id="@+id/message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:text="@={viewModel.content}"
+                android:textSize="20sp"
+
+                android:background="@drawable/default_round_10"
+                android:backgroundTint="@color/gray"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_gchat_send"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/btn_gchat_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_send"
+
+                app:layout_constraintTop_toTopOf="@+id/message"
+                app:layout_constraintBottom_toBottomOf="@+id/message"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 
