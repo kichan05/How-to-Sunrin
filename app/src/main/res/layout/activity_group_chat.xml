@@ -80,6 +80,18 @@
             app:stackFromEnd="true"
 
             app:layout_constraintTop_toBottomOf="@id/constraint_chat_appBar"
+            app:layout_constraintBottom_toTopOf="@id/img_chat_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/img_chat_line"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+
+            android:src="@drawable/line"
+
             app:layout_constraintBottom_toTopOf="@id/constraint_chat_inputBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,6 +119,9 @@
 
                 android:background="@drawable/default_round_10"
                 android:backgroundTint="@color/gray"
+
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="8dp"
 
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/btn_gchat_send"

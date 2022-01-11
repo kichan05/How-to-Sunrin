@@ -36,7 +36,6 @@ class ChatActivity : AppCompatActivity() {
 
         groupChat_RecyclerAdapter = GroupChatRecyclerAdpter(this)
         binding.recyclerGroupchat.adapter = groupChat_RecyclerAdapter
-        //binding.recyclerGroupchat.scrollToPosition(groupChat_RecyclerAdapter.itemCount)
 
         chatDB.db.collection("ChatGroup").orderBy("timeStamp")
             .addSnapshotListener { value, error ->
@@ -77,10 +76,11 @@ class ChatActivity : AppCompatActivity() {
                 withContext(Dispatchers.Main) {
                     if(result == ChatUtil.ResultSuccess) {
 //                        Toast.makeText(applicationContext, "성공적으로 채팅을 보냈습니다!", Toast.LENGTH_SHORT).show()
+                        binding.recyclerGroupchat.scrollToPosition(groupChat_RecyclerAdapter.itemCount - 1)
                         binding.message.text = null
                     } else {
-//                        Toast.makeText(applicationContext, "채팅을 보내지 못했습니다.", Toast.LENGTH_SHORT).show()
-                        binding.message.text = null
+                        Toast.makeText(applicationContext, "채팅을 보내지 못했습니다.", Toast.LENGTH_SHORT).show()
+//                        binding.message.text = null
                     }
                 }
             }

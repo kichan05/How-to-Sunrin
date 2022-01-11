@@ -3,7 +3,9 @@
     <style name="Theme.HowToSunrin" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/EDCAN</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+<!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+        <item name="colorPrimaryVariant">@color/EDCAN</item>
+        a
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
