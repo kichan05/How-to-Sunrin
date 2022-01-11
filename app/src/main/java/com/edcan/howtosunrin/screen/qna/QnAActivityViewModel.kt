@@ -7,6 +7,7 @@ import com.edcan.howtosunrin.screen.splash.qnaDB
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class QnAActivityViewModel : ViewModel() {
     val question = MutableLiveData(Question())
@@ -19,7 +20,9 @@ class QnAActivityViewModel : ViewModel() {
 
     fun question() {
         CoroutineScope(Dispatchers.IO).launch {
-            question.value = getOneQuestion()
+            withContext(Dispatchers.Main){
+                question.value = getOneQuestion()
+            }
         }
     }
 }

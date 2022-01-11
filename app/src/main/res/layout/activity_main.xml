@@ -12,37 +12,155 @@
         android:layout_height="match_parent"
         tools:context=".screen.main.MainActivity">
 
-        <TextView
-            android:id="@+id/txt_main_title"
+        <ImageView
+            android:id="@+id/img_main_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="How to Sunrin"
-            android:textSize="32sp"
+            android:src="@drawable/ic_edcan"
+
+            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="16dp"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             />
 
-        <Button
-            android:id="@+id/btn_main_gotoQnA"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linear_main_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:text="QnA 질문 보기"
+            android:orientation="vertical"
 
-            app:layout_constraintTop_toBottomOf="@id/txt_main_title"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/img_main_icon"
+            app:layout_constraintStart_toStartOf="@id/guide_main_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_main_line2"
+
+            app:layout_constraintVertical_chainStyle="packed"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="선린에 대한 궁금증을 해소 시켜주는"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="How to Sunrin"
+                android:textSize="32sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_bold"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="에 오신 것을 환영합니다!"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_main_illust"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/ic_main_illust"
+            android:adjustViewBounds="true"
+
+            android:layout_marginVertical="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/linear_main_title"
+            app:layout_constraintBottom_toTopOf="@+id/linear_main_buttons"
+            app:layout_constraintStart_toStartOf="@id/guide_main_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_main_line2"
             />
 
-        <Button
-            android:id="@+id/btn_main_gotoGroupChat"
+        <LinearLayout
+            android:id="@+id/linear_main_buttons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            android:layout_marginBottom="30dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/img_main_illust"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_main_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_main_line2"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="선린에 대한 전반적인 궁금증이 있다면?"
+                android:fontFamily="@font/roboto_light"
+                />
+
+            <Button
+                android:id="@+id/btn_main_gotoQnA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                style="@style/customButtonStyle"
+
+                android:text="QnA 질문 보기"
+
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="다른 사람들과 궁금증을 공유"
+                android:fontFamily="@font/roboto_light"
+                />
+
+            <Button
+                android:id="@+id/btn_main_gotoGroupChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                style="@style/customButtonStyle"
+
+                android:text="단체 채팅 하기"
+
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"
+                />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_main_line1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="단체 채팅 하기"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_main_gotoQnA" />
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp"
+            />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_main_line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="30dp"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
