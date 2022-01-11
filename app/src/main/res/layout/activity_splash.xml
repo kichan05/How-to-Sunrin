@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".screen.splash.SplashActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="How to Sunrin"
-        android:textSize="24sp"
+        android:src="@drawable/ic_splash_icon"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
