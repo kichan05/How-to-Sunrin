@@ -21,5 +21,9 @@ class QnAActivity : AppCompatActivity() {
 
         viewModel.question()
 
+        binding.imgQnaPrev.setOnClickListener {
+            finish()
+        }
+
     }
 }

@@ -5,4 +5,10 @@
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:background">@drawable/default_round_10</item>
     </style>
+
+    <style name="customAppbarStyle" parent="Theme.HowToSunrin">
+        <item name="android:paddingVertical">10dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">15dp</item>
+    </style>
 </resources>

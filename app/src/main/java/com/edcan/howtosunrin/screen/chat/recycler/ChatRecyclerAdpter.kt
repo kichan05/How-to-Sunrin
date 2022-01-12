@@ -16,36 +16,56 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class GroupChatRecyclerAdpter(private val context: Context) : RecyclerView.Adapter<GroupChatRecyclerAdpter.GroupChatViewHolder>() {
+class GroupChatRecyclerAdpter(private val context: Context, private val currentUser: User) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var chatData = mutableListOf<Chat>()
     val userData = mutableMapOf<String, User>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupChatRecyclerAdpter.GroupChatViewHolder {
-        val view = LayoutInflater.from(context).inflate(
-            R.layout.layout_groupchat_recycleritem,
-            parent, false
-        )
-
-        return GroupChatViewHolder(view)
+    override fun getItemViewType(position: Int): Int {
+        return if(chatData[position].userId == currentUser.userID){
+            return CHAT_ITEM_VIEW_TYPE.MY.ordinal
+        }   else{
+            CHAT_ITEM_VIEW_TYPE.YOU.ordinal
+        }
     }
 
-    override fun onBindViewHolder(holder: GroupChatRecyclerAdpter.GroupChatViewHolder, position: Int) {
-        holder.onBind((chatData[position]))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : RecyclerView.ViewHolder {
+//        val a = when(viewType){
+//            CHAT_ITEM_VIEW_TYPE.YOU.ordinal -> myChatViewHolder(LayoutInflater.from(context).inflate(
+//                R.layout.layout_i_chat_recycleritem,
+//                parent, false
+//            ))
+//            else -> youChatViewHolder(LayoutInflater.from(context).inflate(
+//                R.layout.layout_i_chat_recycleritem, parent, false
+//            ))
+//        }
+
+        return myChatViewHolder(LayoutInflater.from(context).inflate(
+            R.layout.layout_i_chat_recycleritem,
+            parent, false
+        ))
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        (holder as myChatViewHolder).onBind(chatData[position])
+        return
+        when(holder){
+            is myChatViewHolder -> {
+                (holder as myChatViewHolder).onBind(chatData[position])
+                Log.d("chatData", chatData[position].toString())
+            }
+            else -> {
+                (holder as youChatViewHolder).onBind(chatData[position])
+                Log.d("chatData", chatData[position].toString())
+            }
+        }
+
     }
 
     override fun getItemCount(): Int = chatData.size
 
-    inner class GroupChatViewHolder(itemView: View):
-        RecyclerView.ViewHolder(itemView),
-        View.OnClickListener {
-
-        private val userId : TextView = itemView.findViewById(R.id.txt_userName)
-        private val content : TextView = itemView.findViewById(R.id.txt_content)
-
-        init {
-            itemView.setOnClickListener(this)
-        }
-
+    inner class youChatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        private val userId = itemView.findViewById<TextView>(R.id.txt_youChat_userName)
+        private val content = itemView.findViewById<TextView>(R.id.txt_youChat_content)
 
         fun onBind(data: Chat) {
             content.text = data.content
@@ -68,8 +88,33 @@ class GroupChatRecyclerAdpter(private val context: Context) : RecyclerView.Adapt
                 }
             }
         }
+    }
 
-        override fun onClick(v: View?) {
+    inner class myChatViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        private val userId : TextView = itemView.findViewById(R.id.txt_myChat_userName)
+        private val content : TextView = itemView.findViewById(R.id.txt_myChat_content)
+
+        fun onBind(data: Chat) {
+            Log.d("chatData", data.toString())
+            content.text = data.content
+
+            if(data.userId == "admin"){
+                userId.text = "admin"
+                return
+            }
+
+            if(userData.containsKey(data.userId)){
+                userId.text = userData[data.userId]!!.name
+                return
+            }
+
+            CoroutineScope(Dispatchers.IO).launch {
+                Log.d("userId", data.userId)
+                userData[data.userId] = userDB.getUserDataById(data.userId)!!
+                withContext(Dispatchers.Main){
+                    userId.text = userData[data.userId]!!.name
+                }
+            }
         }
     }
 }

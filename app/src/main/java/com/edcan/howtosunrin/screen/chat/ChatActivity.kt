@@ -12,6 +12,7 @@ import com.edcan.howtosunrin.utill.chat.Chat
 import com.edcan.howtosunrin.utill.chat.ChatUtil
 import com.edcan.howtosunrin.screen.chat.recycler.GroupChatRecyclerAdpter
 import com.edcan.howtosunrin.screen.splash.chatDB
+import com.edcan.howtosunrin.utill.user.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,37 +33,43 @@ class ChatActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        val userId = SharedUtil.pref.getString(SharedUtil.keyUserId, "none")
+        viewModel.userData.value = intent.getSerializableExtra("userData") as User
 
-        groupChat_RecyclerAdapter = GroupChatRecyclerAdpter(this)
+        groupChat_RecyclerAdapter = GroupChatRecyclerAdpter(this, viewModel.userData.value!!)
         binding.recyclerGroupchat.adapter = groupChat_RecyclerAdapter
 
-        chatDB.db.collection("ChatGroup").orderBy("timeStamp")
-            .addSnapshotListener { value, error ->
-                if(error != null){
-                    Toast.makeText(this, "채팅 에러 발생", Toast.LENGTH_LONG).show()
-                    finish()
+        binding.imgChatPrevBtn.setOnClickListener{
+            finish()
+        }
 
-                    return@addSnapshotListener
+        CoroutineScope(Dispatchers.Main).launch {
+            chatDB.db.collection("ChatGroup").orderBy("timeStamp")
+                .addSnapshotListener { value, error ->
+                    if(error != null){
+                        Toast.makeText(this@ChatActivity, "채팅 에러 발생", Toast.LENGTH_LONG).show()
+                        finish()
+
+                        return@addSnapshotListener
+                    }
+
+                    if(value == null){
+                        Toast.makeText(this@ChatActivity, "채팅 값이 없습니다.", Toast.LENGTH_LONG).show()
+                        finish()
+
+                        return@addSnapshotListener
+                    }
+
+                    val chatList = mutableListOf<Chat>()
+
+                    for(doc in value){
+                        chatList.add(doc.toObject(Chat::class.java))
+                    }
+
+                    groupChat_RecyclerAdapter.chatData = chatList
+                    groupChat_RecyclerAdapter.notifyDataSetChanged()
                 }
-
-                if(value == null){
-                    Toast.makeText(this, "채팅 값이 없습니다.", Toast.LENGTH_LONG).show()
-                    finish()
-
-                    return@addSnapshotListener
-                }
-
-                val chatList = mutableListOf<Chat>()
-
-                for(doc in value){
-                    chatList.add(doc.toObject(Chat::class.java))
-                }
-
-                groupChat_RecyclerAdapter.chatData = chatList
-                groupChat_RecyclerAdapter.notifyDataSetChanged()
-            }
-
+        }
+        
 
         binding.btnGchatSend.setOnClickListener {
             if(viewModel.content.value!!.isEmpty()) {
@@ -71,7 +78,7 @@ class ChatActivity : AppCompatActivity() {
             }
 
             CoroutineScope(Dispatchers.IO).launch {
-                val result = viewModel.sendChat(userId.toString())
+                val result = viewModel.sendChat()
 
                 withContext(Dispatchers.Main) {
                     if(result == ChatUtil.ResultSuccess) {

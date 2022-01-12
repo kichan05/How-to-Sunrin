@@ -18,9 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:paddingVertical="10dp"
-            android:background="@color/white"
-            android:elevation="15dp"
+            style="@style/customAppbarStyle"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +73,7 @@
 
             android:backgroundTint="#f7f7f7"
 
-            tools:listitem="@layout/layout_groupchat_recycleritem"
+            tools:listitem="@layout/layout_you_chat_recycleritem"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:stackFromEnd="true"
 

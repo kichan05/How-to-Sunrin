@@ -12,11 +12,11 @@ class ChatActivityViewModel: ViewModel() {
 
     lateinit var chatData : Chat
 
-    suspend fun sendChat(userId : String, timestamp : Date = Date()) : Int{
+    suspend fun sendChat() : Int{
         chatData = Chat(
-            userId,
+            userData.value!!.userID,
             content.value.toString(),
-            timestamp
+            Date()
         )
         return chatDB.sendChat(chatData)
     }
