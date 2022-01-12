@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--import glob-->
+    <!--from typing import Tuple-->
+    <!--import os-->
+
+    <!--font_list = glob.glob("*.ttf")-->
+
+    <!--for font_name in font_list:-->
+    <!--    name = font_name.split("-")[1]-->
+
+    <!--    print(f"{font_name} -> roboto_{name[0].lower()}{name[1:]}")-->
+    <!--    os.rename(font_name, f"roboto_{name[0].lower()}{name[1:]}")-->
+</font-family>

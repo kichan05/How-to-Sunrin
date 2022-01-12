@@ -11,11 +11,22 @@ import kotlinx.coroutines.withContext
 
 class QnAActivityViewModel : ViewModel() {
     val question = MutableLiveData(Question())
+    var prevQuestion = Question()
 
     suspend fun getOneQuestion() : Question{
         val questions = qnaDB.getAllQuestion()
+        var rand : Question
 
-        return questions.random()
+        while (true){
+            rand = questions.random()
+
+            if(rand != prevQuestion){
+                prevQuestion = rand
+                break
+            }
+        }
+
+        return rand
     }
 
     fun question() {
