@@ -43,7 +43,7 @@ class UserDataActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
+
             }
 
         }
@@ -54,6 +54,7 @@ class UserDataActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             else if (viewModel.major.value!! == 0){
+                //todo
                 Toast.makeText(this, "학과를 선택해주세요.", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
@@ -62,6 +63,7 @@ class UserDataActivity : AppCompatActivity() {
                 val result = viewModel.saveUserData()
 
                 withContext(Dispatchers.Main){
+                    //todo
                     if(result == UserUtil.ResultSuccess){
                         Toast.makeText(this@UserDataActivity, "유저 등록에 성공했습니다.", Toast.LENGTH_LONG).show()
                         

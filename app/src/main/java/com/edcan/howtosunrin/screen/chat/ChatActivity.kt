@@ -22,6 +22,7 @@ import java.util.*
 
 
 class ChatActivity : AppCompatActivity() {
+    //todo
     lateinit var binding : ActivityGroupChatBinding
     lateinit var viewModel: ChatActivityViewModel
     lateinit var groupChat_RecyclerAdapter: GroupChatRecyclerAdapter
@@ -29,6 +30,7 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //todo
         binding = DataBindingUtil.setContentView(this, R.layout.activity_group_chat)
         viewModel = ViewModelProvider(this).get(ChatActivityViewModel::class.java)
         binding.viewModel = viewModel
@@ -51,13 +53,14 @@ class ChatActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             chatDB.db.collection("ChatGroup").orderBy("timeStamp")
                 .addSnapshotListener { value, error ->
+                    //todo
                     if(error != null){
                         Toast.makeText(this@ChatActivity, "채팅 에러 발생", Toast.LENGTH_LONG).show()
                         finish()
 
                         return@addSnapshotListener
                     }
-
+                    //todo
                     if(value == null){
                         Toast.makeText(this@ChatActivity, "채팅 값이 없습니다.", Toast.LENGTH_LONG).show()
                         finish()
@@ -66,7 +69,7 @@ class ChatActivity : AppCompatActivity() {
                     }
 
                     val chatList = mutableListOf<Chat>()
-
+                    //todo
                     for(doc in value){
                         chatList.add(doc.toObject(Chat::class.java))
                     }

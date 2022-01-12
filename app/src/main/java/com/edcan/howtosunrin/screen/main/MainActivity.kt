@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnMainGotoQnA.setOnClickListener {
             val intent = Intent(this, QnAActivity::class.java)
+            //todo
             intent.putExtra("userData", currentUserData)
             startActivity(intent)
         }
