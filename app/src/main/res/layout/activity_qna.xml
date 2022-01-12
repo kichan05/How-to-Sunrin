@@ -53,6 +53,7 @@
                 />
 
             <ImageView
+                android:id="@+id/img_qna_edcanIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 

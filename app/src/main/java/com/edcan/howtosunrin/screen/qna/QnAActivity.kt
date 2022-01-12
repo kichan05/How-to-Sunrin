@@ -1,5 +1,7 @@
 package com.edcan.howtosunrin.screen.qna
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -25,5 +27,9 @@ class QnAActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.imgQnaEdcanIcon.setOnClickListener{
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://edcan.kr"))
+            startActivity(intent)
+        }
     }
 }

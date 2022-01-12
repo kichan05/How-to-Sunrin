@@ -1,5 +1,7 @@
 package com.edcan.howtosunrin.screen.chat
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -40,6 +42,11 @@ class ChatActivity : AppCompatActivity() {
 
         binding.imgChatPrevBtn.setOnClickListener{
             finish()
+        }
+
+        binding.imgChatEDCANIcon.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://edcan.kr"))
+            startActivity(intent)
         }
 
         CoroutineScope(Dispatchers.Main).launch {

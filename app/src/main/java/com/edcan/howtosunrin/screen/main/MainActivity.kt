@@ -1,6 +1,7 @@
 package com.edcan.howtosunrin.screen.main
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -9,6 +10,7 @@ import com.edcan.howtosunrin.databinding.ActivityMainBinding
 import com.edcan.howtosunrin.utill.user.User
 import com.edcan.howtosunrin.screen.chat.ChatActivity
 import com.edcan.howtosunrin.screen.qna.QnAActivity
+
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
     lateinit var currentUserData : User
@@ -28,6 +30,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnMainGotoGroupChat.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
             intent.putExtra("userData", currentUserData)
+            startActivity(intent)
+        }
+
+        binding.imgMainIcon.setOnClickListener{
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://edcan.kr"))
             startActivity(intent)
         }
     }
