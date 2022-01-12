@@ -9,10 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.ActivityGroupChatBinding
-import com.edcan.howtosunrin.utill.SharedUtil
 import com.edcan.howtosunrin.utill.chat.Chat
 import com.edcan.howtosunrin.utill.chat.ChatUtil
-import com.edcan.howtosunrin.screen.chat.recycler.GroupChatRecyclerAdpter
+import com.edcan.howtosunrin.screen.chat.recycler.GroupChatRecyclerAdapter
 import com.edcan.howtosunrin.screen.splash.chatDB
 import com.edcan.howtosunrin.utill.user.User
 import kotlinx.coroutines.CoroutineScope
@@ -25,7 +24,7 @@ import java.util.*
 class ChatActivity : AppCompatActivity() {
     lateinit var binding : ActivityGroupChatBinding
     lateinit var viewModel: ChatActivityViewModel
-    lateinit var groupChat_RecyclerAdapter: GroupChatRecyclerAdpter
+    lateinit var groupChat_RecyclerAdapter: GroupChatRecyclerAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +36,7 @@ class ChatActivity : AppCompatActivity() {
 
         viewModel.userData.value = intent.getSerializableExtra("userData") as User
 
-        groupChat_RecyclerAdapter = GroupChatRecyclerAdpter(this, viewModel.userData.value!!)
+        groupChat_RecyclerAdapter = GroupChatRecyclerAdapter(this, viewModel.userData.value!!)
         binding.recyclerGroupchat.adapter = groupChat_RecyclerAdapter
 
         binding.imgChatPrevBtn.setOnClickListener{
@@ -74,6 +73,7 @@ class ChatActivity : AppCompatActivity() {
 
                     groupChat_RecyclerAdapter.chatData = chatList
                     groupChat_RecyclerAdapter.notifyDataSetChanged()
+                    binding.recyclerGroupchat.scrollToPosition(groupChat_RecyclerAdapter.chatData.size)
                 }
         }
         
