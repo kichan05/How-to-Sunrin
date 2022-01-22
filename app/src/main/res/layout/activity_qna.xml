@@ -44,8 +44,7 @@
 
                 android:text="QnA"
                 android:textSize="20sp"
-                android:fontFamily="@font/roboto_black"
-                android:textColor="@color/black"
+                android:textFontWeight="900"
 
                 app:layout_constraintTop_toTopOf="@id/img_qna_prev"
                 app:layout_constraintBottom_toBottomOf="@id/img_qna_prev"
@@ -57,9 +56,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:src="@drawable/ic_edcan"
+                android:padding="16dp"
 
-                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_edcan"
 
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -86,16 +85,16 @@
             android:layout_height="wrap_content"
 
             android:text="@{viewModel.question.question, default=`선린생활 재미있나요?`}"
+
             android:textSize="20sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto_bold"
+            android:textFontWeight="800"
             />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
 
-            android:background="@color/gray"
+            android:background="@color/gray3"
 
             android:layout_marginVertical="10dp"
             />
@@ -106,8 +105,7 @@
 
             android:text="@{viewModel.question.answer, default=`네. 하지만 많이 힘들어요.`}"
             android:textSize="20sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto_medium"
+            android:textFontWeight="500"
             />
 
         </LinearLayout>
@@ -116,8 +114,6 @@
             android:id="@+id/btn_qna_nextBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-
-            style="@style/customButtonStyle"
 
             android:text="다음"
             android:textSize="24sp"

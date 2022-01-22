@@ -91,7 +91,7 @@ class GroupChatRecyclerAdapter(private val context: Context, private val current
 
         companion object{
             fun from(parent: ViewGroup) : youChatViewHolder{
-                val layout = LayoutInflater.from(parent.context).inflate(R.layout.layout_you_chat_recycleritem, parent, false)
+                val layout = LayoutInflater.from(parent.context).inflate(R.layout.item_you_chat_recycleritem, parent, false)
 
                 return youChatViewHolder(layout)
             }
@@ -109,7 +109,7 @@ class GroupChatRecyclerAdapter(private val context: Context, private val current
 
         companion object{
             fun from(parent: ViewGroup) : myChatViewHolder{
-                val layout = LayoutInflater.from(parent.context).inflate(R.layout.layout_i_chat_recycleritem, parent, false)
+                val layout = LayoutInflater.from(parent.context).inflate(R.layout.item_i_chat_recycleritem, parent, false)
 
                 return myChatViewHolder(layout)
             }
