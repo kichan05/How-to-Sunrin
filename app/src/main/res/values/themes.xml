@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.HowToSunrin" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/EDCAN</item>
         <item name="colorPrimaryVariant">@color/EDCAN</item>
         <item name="colorOnPrimary">@color/white</item>
 
@@ -20,8 +20,8 @@
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
 
+        <!-- Customize your theme here. -->
         <item name="android:textViewStyle">@style/customTextStyle</item>
         <item name="android:buttonStyle">@style/customButtonStyle</item>
         <item name="editTextStyle">@style/customEditTextStyle</item>

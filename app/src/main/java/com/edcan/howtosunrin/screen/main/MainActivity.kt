@@ -10,6 +10,7 @@ import com.edcan.howtosunrin.databinding.ActivityMainBinding
 import com.edcan.howtosunrin.utill.user.User
 import com.edcan.howtosunrin.screen.chat.ChatActivity
 import com.edcan.howtosunrin.screen.qna.QnAActivity
+import com.edcan.howtosunrin.screen.qna.QnASliderActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
@@ -31,6 +32,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnMainGotoGroupChat.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
             intent.putExtra("userData", currentUserData)
+            startActivity(intent)
+        }
+
+        binding.btnMainGotoQnASlider.setOnClickListener{
+            val intent = Intent(this, QnASliderActivity::class.java)
             startActivity(intent)
         }
 

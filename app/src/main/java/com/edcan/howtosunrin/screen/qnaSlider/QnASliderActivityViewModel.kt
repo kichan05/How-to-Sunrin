@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class QnAActivityViewModel : ViewModel() {
+class QnASliderActivityViewModel : ViewModel() {
     val question = MutableLiveData(Question())
     var prevQuestion = Question()
 
