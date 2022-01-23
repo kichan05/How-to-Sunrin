@@ -9,9 +9,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class QnASliderActivityViewModel : ViewModel() {
+class QnAViewModel : ViewModel() {
     val question = MutableLiveData(Question())
     var prevQuestion = Question()
+
+    init {
+        question()
+    }
 
     suspend fun getAllQuestion() : List<Question>{
         return qnaDB.getAllQuestion()

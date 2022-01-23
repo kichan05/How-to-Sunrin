@@ -28,7 +28,7 @@
             android:name=".screen.qna.QnAActivity"
             android:exported="true" />
         <activity
-            android:name=".screen.qna.QnASliderActivity"
+            android:name=".screen.qnaSlider.QnASliderActivity"
             android:exported="true" />
 
         <activity android:name=".screen.chat.ChatActivity" />

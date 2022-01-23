@@ -10,7 +10,7 @@ import com.edcan.howtosunrin.databinding.ActivityMainBinding
 import com.edcan.howtosunrin.utill.user.User
 import com.edcan.howtosunrin.screen.chat.ChatActivity
 import com.edcan.howtosunrin.screen.qna.QnAActivity
-import com.edcan.howtosunrin.screen.qna.QnASliderActivity
+import com.edcan.howtosunrin.screen.qnaSlider.QnASliderActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding

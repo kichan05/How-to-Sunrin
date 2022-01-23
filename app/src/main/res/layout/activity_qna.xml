@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.edcan.howtosunrin.screen.qna.QnASliderActivityViewModel" />
+            type="com.edcan.howtosunrin.screen.qna.QnAViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
