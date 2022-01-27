@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
-    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    android:paddingHorizontal="20dp"
-    android:paddingVertical="5dp"
-    >
+    <data>
+        <variable
+            name="chatData"
+            type="com.edcan.howtosunrin.utill.chat.Chat" />
+        <variable
+            name="userData"
+            type="com.edcan.howtosunrin.utill.user.User" />
+    </data>
 
-    <TextView
-        android:id="@+id/txt_youChat_userName"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
 
-        android:gravity="center"
-        android:text="userid"
-        android:textSize="12sp"
-        android:textColor="@color/black"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp">
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        <TextView
+            android:id="@+id/txt_youChat_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            android:text="@{userData.name}"
+            tools:text="바키찬"
+            android:textSize="12sp"
+            android:textColor="@color/black"
 
-    <TextView
-        android:id="@+id/txt_youChat_content"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+            android:gravity="center"
 
-        android:text="EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 "
-        android:textSize="14sp"
-        android:textFontWeight="400"
-
-        android:background="@drawable/ic_square_round"
-        android:backgroundTint="@color/gray2"
-
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="10dp"
-        android:layout_marginTop="4dp"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_youChat_userName"
-        app:layout_constraintWidth_max="300dp"
-        />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txt_youChat_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:text="@{chatData.content}"
+            tools:text="EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야"
+            android:textSize="14sp"
+            android:textFontWeight="400"
+
+            android:background="@drawable/ic_square_round"
+            android:backgroundTint="@color/gray2"
+
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginTop="4dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_youChat_userName"
+            app:layout_constraintWidth_max="300dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,4 +1,5 @@
 package com.edcan.howtosunrin.screen.chat
+import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.edcan.howtosunrin.utill.chat.Chat
@@ -9,6 +10,8 @@ import java.util.*
 class ChatActivityViewModel: ViewModel() {
     var userData = MutableLiveData(User())
     val content = MutableLiveData("")
+
+    val chatDataList = ObservableArrayList<Chat>()
 
     lateinit var chatData : Chat
 

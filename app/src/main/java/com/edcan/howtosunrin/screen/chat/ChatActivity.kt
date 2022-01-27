@@ -38,7 +38,7 @@ class ChatActivity : AppCompatActivity() {
 
         viewModel.userData.value = intent.getSerializableExtra("userData") as User
 
-        groupChat_RecyclerAdapter = GroupChatRecyclerAdapter(this, viewModel.userData.value!!)
+        groupChat_RecyclerAdapter = GroupChatRecyclerAdapter(viewModel.userData.value!!)
         binding.recyclerGroupchat.adapter = groupChat_RecyclerAdapter
 
         binding.imgChatPrevBtn.setOnClickListener{
@@ -74,9 +74,8 @@ class ChatActivity : AppCompatActivity() {
                         chatList.add(doc.toObject(Chat::class.java))
                     }
 
-                    groupChat_RecyclerAdapter.chatData = chatList
-                    groupChat_RecyclerAdapter.notifyDataSetChanged()
-                    binding.recyclerGroupchat.scrollToPosition(groupChat_RecyclerAdapter.chatData.size)
+                    //binding.recyclerGroupchat.scrollToPosition(groupChat_RecyclerAdapter.chatData.size)
+                    groupChat_RecyclerAdapter.submitList(chatList)
                 }
         }
         
