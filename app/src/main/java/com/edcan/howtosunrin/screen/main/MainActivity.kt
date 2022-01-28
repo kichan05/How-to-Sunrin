@@ -22,12 +22,12 @@ class MainActivity : AppCompatActivity() {
 
         currentUserData = intent.getSerializableExtra("userData") as User
 
-        binding.btnMainGotoQnA.setOnClickListener {
-            val intent = Intent(this, QnAActivity::class.java)
-            //todo
-            intent.putExtra("userData", currentUserData)
-            startActivity(intent)
-        }
+//        binding.btnMainGotoQnA.setOnClickListener {
+//            val intent = Intent(this, QnAActivity::class.java)
+//            //todo
+//            intent.putExtra("userData", currentUserData)
+//            startActivity(intent)
+//        }
 
         binding.btnMainGotoGroupChat.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
