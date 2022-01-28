@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.edcan.howtosunrin.screen.userData.UserDataViewModel" />
+            type="com.edcan.howtosunrin.ui.userData.UserDataViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screen.userData.UserDataActivity">
+        tools:context=".ui.userData.UserDataActivity">
 
         <TextView
             android:id="@+id/txt_userData_title"

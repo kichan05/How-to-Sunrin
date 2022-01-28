@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screen.main.MainActivity">
+        tools:context=".ui.main.MainActivity">
 
         <ImageView
             android:id="@+id/img_main_icon"
@@ -87,24 +87,6 @@
             app:layout_constraintEnd_toEndOf="@id/guide_main_line2"
             app:layout_constraintStart_toStartOf="@id/guide_main_line1"
             app:layout_constraintTop_toBottomOf="@+id/img_main_illust">
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-
-<!--                android:fontFamily="@font/roboto_light"-->
-<!--                android:text="선린에 대한 전반적인 궁금증이 있다면?" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btn_main_gotoQnA"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-
-<!--                android:layout_marginTop="4dp"-->
-<!--                android:layout_marginBottom="12dp"-->
-
-<!--                android:text="QnA 질문 보기"-->
-<!--                />-->
 
             <TextView
                 android:layout_width="wrap_content"

@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HowToSunrin">
         <activity
-            android:name=".screen.userData.UserDataActivity"
+            android:name=".ui.userData.UserDataActivity"
             android:exported="false" />
         <activity
-            android:name=".screen.main.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".screen.splash.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,13 +25,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screen.qna.QnAActivity"
+            android:name=".ui.qna.QnAActivity"
             android:exported="true" />
         <activity
-            android:name=".screen.qnaSlider.QnASliderActivity"
+            android:name=".ui.qnaSlider.QnASliderActivity"
             android:exported="true" />
 
-        <activity android:name=".screen.chat.ChatActivity" />
+        <activity android:name=".ui.chat.ChatActivity" />
     </application>
 
 </manifest>

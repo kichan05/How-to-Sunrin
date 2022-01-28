@@ -1,11 +1,9 @@
-package com.edcan.howtosunrin.screen.chat.recycler
+package com.edcan.howtosunrin.ui.chat.recycler
 
 import android.view.ViewGroup
-import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.edcan.howtosunrin.screen.splash.userDB
 import com.edcan.howtosunrin.utill.chat.Chat
 import com.edcan.howtosunrin.utill.user.User
 import kotlinx.coroutines.CoroutineScope

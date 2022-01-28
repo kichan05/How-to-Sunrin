@@ -1,9 +1,9 @@
-package com.edcan.howtosunrin.screen.qna
+package com.edcan.howtosunrin.ui.qna
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.edcan.howtosunrin.utill.qna.Question
-import com.edcan.howtosunrin.screen.splash.qnaDB
+import com.edcan.howtosunrin.ui.splash.qnaDB
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.screen.qnaSlider
+package com.edcan.howtosunrin.ui.qnaSlider
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.screen.chat.recycler
+package com.edcan.howtosunrin.ui.chat.recycler
 
 import com.edcan.howtosunrin.utill.chat.Chat
 import com.edcan.howtosunrin.utill.user.User

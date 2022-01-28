@@ -1,11 +1,10 @@
-package com.edcan.howtosunrin.screen.chat.recycler
+package com.edcan.howtosunrin.ui.chat.recycler
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.edcan.howtosunrin.databinding.ItemIChatRecycleritemBinding
 import com.edcan.howtosunrin.databinding.ItemYouChatRecycleritemBinding
-import com.edcan.howtosunrin.screen.splash.userDB
+import com.edcan.howtosunrin.ui.splash.userDB
 import com.edcan.howtosunrin.utill.chat.Chat
 import com.edcan.howtosunrin.utill.user.User
 

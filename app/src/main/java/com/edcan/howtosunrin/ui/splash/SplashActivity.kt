@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.screen.splash
+package com.edcan.howtosunrin.ui.splash
 
 import android.app.Activity
 import android.content.Intent
@@ -11,8 +11,8 @@ import com.edcan.howtosunrin.utill.SharedUtil
 import com.edcan.howtosunrin.utill.chat.ChatDB
 import com.edcan.howtosunrin.utill.qna.DB
 import com.edcan.howtosunrin.utill.user.UserDB
-import com.edcan.howtosunrin.screen.main.MainActivity
-import com.edcan.howtosunrin.screen.userData.UserDataActivity
+import com.edcan.howtosunrin.ui.main.MainActivity
+import com.edcan.howtosunrin.ui.userData.UserDataActivity
 import kotlinx.coroutines.*
 
 lateinit var qnaDB : DB

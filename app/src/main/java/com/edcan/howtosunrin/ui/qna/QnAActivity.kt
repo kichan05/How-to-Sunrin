@@ -1,4 +1,4 @@
-package com.edcan.howtosunrin.screen.qna
+package com.edcan.howtosunrin.ui.qna
 
 import android.content.Intent
 import android.net.Uri

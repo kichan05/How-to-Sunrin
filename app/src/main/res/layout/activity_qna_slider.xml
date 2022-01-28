@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.edcan.howtosunrin.screen.qnaSlider.QnASliderViewModel" />
+            type="com.edcan.howtosunrin.ui.qnaSlider.QnASliderViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screen.qna.QnASliderActivity">
+        tools:context=".ui.qna.QnASliderActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_qna_appbar"
@@ -72,6 +72,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
 
+            app:bindQnAFragments="@{viewModel.questionList}"
+
             app:layout_constraintTop_toBottomOf="@id/constraint_qna_appbar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,22 +96,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             />
 
-<!--        <Button-->
-<!--            android:id="@+id/btn_qna_nextBtn"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-
-<!--            android:text="다음"-->
-<!--            android:textSize="24sp"-->
-
-<!--            android:onClick="@{() -> viewModel.question()}"-->
-
-<!--            android:layout_marginBottom="20dp"-->
-
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="@id/guide_qna_line1"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/guide_qna_line2"-->
-<!--            />-->
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_qna_line1"
