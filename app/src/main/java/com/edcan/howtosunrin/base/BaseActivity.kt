@@ -4,12 +4,15 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.viewbinding.ViewBinding
+import com.edcan.howtosunrin.R
 
 abstract class BaseActivity<D : ViewDataBinding>(
     @LayoutRes
@@ -23,7 +26,22 @@ abstract class BaseActivity<D : ViewDataBinding>(
         binding.lifecycleOwner = this
     }
 
-    protected val gotoWebEDCAN = { _: View ->
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_action, menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.action_gotoEDCAN -> gotoWebEDCAN()
+        }
+
+        return true
+    }
+
+
+    protected val gotoWebEDCAN = {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://edcan.kr"))
         startActivity(intent)
     }

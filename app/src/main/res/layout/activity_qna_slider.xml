@@ -14,57 +14,17 @@
         android:layout_height="match_parent"
         tools:context=".ui.qna.QnASliderActivity">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_qna_appbar"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar_qua"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            style="@style/customAppbarStyle"
+            app:title="QnA"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            >
-
-            <ImageView
-                android:id="@+id/img_qna_prev"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:src="@drawable/ic_arrow_left"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="QnA"
-                android:textSize="20sp"
-                android:textFontWeight="900"
-
-                app:layout_constraintTop_toTopOf="@id/img_qna_prev"
-                app:layout_constraintBottom_toBottomOf="@id/img_qna_prev"
-                app:layout_constraintStart_toEndOf="@+id/img_qna_prev"
-                />
-
-            <ImageView
-                android:id="@+id/img_qna_edcanIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:padding="16dp"
-
-                android:src="@drawable/ic_edcan"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            />
 
 
         <androidx.viewpager2.widget.ViewPager2
@@ -74,7 +34,7 @@
 
             app:bindQnAFragments="@{viewModel.questionList}"
 
-            app:layout_constraintTop_toBottomOf="@id/constraint_qna_appbar"
+            app:layout_constraintTop_toBottomOf="@id/toolBar_qua"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

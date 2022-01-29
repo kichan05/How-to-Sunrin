@@ -59,9 +59,10 @@ class ChatActivity : BaseActivity<ActivityGroupChatBinding>(R.layout.activity_gr
 
 
         with(binding){
+            setSupportActionBar(toolBarChat)
+            toolBarChat.setNavigationOnClickListener{ finish() }
+
             btnGchatSend.setOnClickListener(chatSend)
-            imgChatEDCANIcon.setOnClickListener(gotoWebEDCAN)
-            imgChatPrevBtn.setOnClickListener{ finish() }
         }
     }
 

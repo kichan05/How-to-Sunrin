@@ -13,57 +13,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_chat_appBar"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar_chat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            style="@style/customAppbarStyle"
+            app:title="단체 채팅"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <ImageView
-                android:id="@+id/img_chat_prevBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:src="@drawable/ic_arrow_left"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="단체 채팅"
-                android:textSize="20sp"
-                android:textFontWeight="900"
-
-                app:layout_constraintTop_toTopOf="@id/img_chat_prevBtn"
-                app:layout_constraintBottom_toBottomOf="@id/img_chat_prevBtn"
-                app:layout_constraintStart_toEndOf="@id/img_chat_prevBtn"
-                />
-
-            <ImageView
-                android:id="@+id/img_chat_EDCANIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:src="@drawable/ic_edcan"
-
-                android:padding="16dp"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_groupchat"
@@ -78,7 +38,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:stackFromEnd="true"
 
-            app:layout_constraintTop_toBottomOf="@id/constraint_chat_appBar"
+            app:layout_constraintTop_toBottomOf="@id/toolBar_chat"
             app:layout_constraintBottom_toTopOf="@id/img_chat_line"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

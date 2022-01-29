@@ -5,6 +5,8 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
@@ -24,11 +26,11 @@ class QnASliderActivity : BaseActivity<ActivityQnaSliderBinding>(R.layout.activi
 
 
         with(binding){
-            imgQnaPrev.setOnClickListener { finish() }
-            imgQnaEdcanIcon.setOnClickListener(gotoWebEDCAN)
-        }
+            setSupportActionBar(toolBarQua)
+            toolBarQua.setNavigationOnClickListener{ finish() }
 
-        binding.vpQna.adapter = ViewPagerAdapter(this, mutableListOf())
-        binding.vpQna.registerOnPageChangeCallback(viewModel.sliderCallback)
+            vpQna.adapter = ViewPagerAdapter(this@QnASliderActivity, mutableListOf())
+            vpQna.registerOnPageChangeCallback(viewModel!!.sliderCallback)
+        }
     }
 }

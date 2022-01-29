@@ -6,4 +6,6 @@
     <attr name="buttonBackgroundColor" format="color"/>
 
     <item name="editTextBackGroundColor" type="color"/>
+
+    <attr name="toolBarBackGroundColor" format="color"/>
 </resources>

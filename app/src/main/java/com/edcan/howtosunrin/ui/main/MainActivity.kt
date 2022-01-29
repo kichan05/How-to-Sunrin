@@ -22,7 +22,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         currentUserData = intent.getSerializableExtra("userData") as User
 
         with(binding){
-            imgMainIcon.setOnClickListener(gotoWebEDCAN)
+            imgMainIcon.setOnClickListener{gotoWebEDCAN}
             btnMainGotoQnASlider.setOnClickListener(gotoActivityQnA)
             btnMainGotoGroupChat.setOnClickListener(gotoActivityChat)
         }
