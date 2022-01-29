@@ -28,7 +28,7 @@
             >
             <TextView
                 android:id="@+id/txt_qna_question"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:text="@{questionData.question, default=`선린생활 재미있나요?`}"
@@ -47,7 +47,7 @@
                 />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:text="@{questionData.answer, default=`네. 하지만 많이 힘들어요.`}"

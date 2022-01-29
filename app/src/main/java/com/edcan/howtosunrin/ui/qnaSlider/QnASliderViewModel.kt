@@ -16,6 +16,8 @@ import kotlinx.coroutines.withContext
 class QnASliderViewModel : ViewModel() {
     val questionList = ObservableArrayList<Fragment>()
 
+    var currentPage = 0
+
     init {
         addQuestions(15)
     }
@@ -23,6 +25,8 @@ class QnASliderViewModel : ViewModel() {
     val sliderCallback = object : ViewPager2.OnPageChangeCallback(){
         override fun onPageSelected(position: Int) {
             super.onPageSelected(position)
+
+            currentPage = position
 
             if(questionList.size - position <= 7){
                 addQuestions(10)

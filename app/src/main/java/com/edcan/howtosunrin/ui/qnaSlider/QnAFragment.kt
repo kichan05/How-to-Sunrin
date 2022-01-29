@@ -10,7 +10,7 @@ import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.FragmentQnaBinding
 import com.edcan.howtosunrin.utill.qna.Question
 
-class QnAFragment(private val question: Question) : Fragment() {
+class QnAFragment(val question: Question) : Fragment() {
     lateinit var binding : FragmentQnaBinding
 
     override fun onCreateView(
