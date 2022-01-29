@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HowToSunrin">
         <activity
+            android:name=".ui.onboard.OnBoardActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.userData.UserDataActivity"
             android:exported="false" />
         <activity
@@ -30,7 +33,6 @@
         <activity
             android:name=".ui.qnaSlider.QnASliderActivity"
             android:exported="true" />
-
         <activity android:name=".ui.chat.ChatActivity" />
     </application>
 

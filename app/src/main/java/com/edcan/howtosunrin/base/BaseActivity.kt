@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -26,11 +27,12 @@ abstract class BaseActivity<D : ViewDataBinding>(
         binding.lifecycleOwner = this
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_action, menu)
-
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        return super.onCreateOptionsMenu(menu)
+//        menuInflater.inflate(R.menu.toolbar_action, menu)
+//
+//        return true
+//    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
