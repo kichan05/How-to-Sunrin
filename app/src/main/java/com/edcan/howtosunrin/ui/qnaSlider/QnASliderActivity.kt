@@ -18,6 +18,7 @@ import com.edcan.howtosunrin.base.BaseActivity
 import com.edcan.howtosunrin.databinding.ActivityQnaSliderBinding
 import com.edcan.howtosunrin.utill.qna.Question
 import com.edcan.howtosunrin.utill.qna.QuestionDatabase
+import com.edcan.howtosunrin.utill.qna.QuestionUtil.shareQuestion
 import kotlinx.coroutines.*
 
 class QnASliderActivity : BaseActivity<ActivityQnaSliderBinding>(R.layout.activity_qna_slider) {
@@ -37,25 +38,14 @@ class QnASliderActivity : BaseActivity<ActivityQnaSliderBinding>(R.layout.activi
             vpQna.adapter = ViewPagerAdapter(this@QnASliderActivity, mutableListOf())
             vpQna.registerOnPageChangeCallback(viewModel!!.sliderCallback)
 
-            btnQnaShare.setOnClickListener{ shareQuestion(getCurrentQuestion()) }
+            btnQnaShare.setOnClickListener{ shareQuestion(this@QnASliderActivity, getCurrentQuestion()) }
 
             btnQnaSaveQuestion.setOnClickListener { saveQuestion(getCurrentQuestion()) }
         }
     }
 
 
-    fun shareQuestion(questionData : Question) {
 
-        val shareMsg = "[How to Sunrin]\nQ.${questionData.question}\nA.${questionData.answer}\n\n\n더 많은 선린생활을 알고싶다면 How to Sunrin앱을 설치하세요."
-
-        val shareIntent = Intent(Intent.ACTION_SEND).apply {
-            type = "text/html"
-            //putExtra(Intent.EXTRA_TEXT, Html.fromHtml("<h1>Hello EDCAN</h1>", Html.FROM_HTML_MODE_LEGACY).toString())
-            putExtra(Intent.EXTRA_TEXT, shareMsg)
-        }
-
-        startActivity(Intent.createChooser(shareIntent, "질문을 공유하세요!"))
-    }
 
     fun saveQuestion(questionData : Question) {
         viewModel.saveQuestion(questionData)

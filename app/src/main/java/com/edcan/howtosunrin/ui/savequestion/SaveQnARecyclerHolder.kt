@@ -1,11 +1,15 @@
 package com.edcan.howtosunrin.ui.savequestion
 
+import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.ViewParent
+import android.view.Window
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.databinding.LayoutQuestionBinding
+import com.edcan.howtosunrin.dialog.SaveQuestionDialog
 import com.edcan.howtosunrin.utill.qna.Question
 
 class SaveQnARecyclerHolder(private val binding : LayoutQuestionBinding)
@@ -17,7 +21,10 @@ class SaveQnARecyclerHolder(private val binding : LayoutQuestionBinding)
 
     init {
         binding.root.setOnClickListener {
-           Toast.makeText(binding.root.context, binding.questionData!!.question, Toast.LENGTH_LONG).show()
+            val dialog = SaveQuestionDialog(it.context, binding.questionData!!)
+            dialog.start(it.context)
+
+//            Toast.makeText(binding.root.context, binding.questionData!!.question, Toast.LENGTH_LONG).show()
         }
     }
 
