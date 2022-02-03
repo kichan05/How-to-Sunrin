@@ -1,17 +1,13 @@
-package com.edcan.howtosunrin.dialog
+package com.edcan.howtosunrin.ui.savequestion
 
 import android.app.Dialog
 import android.content.Context
-import android.os.Bundle
 import android.view.Window
 import android.widget.Button
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentActivity
+import android.widget.Toast
 import com.edcan.howtosunrin.R
-import com.edcan.howtosunrin.databinding.DialogSaveQuestionBinding
 import com.edcan.howtosunrin.ui.splash.saveQuestionDB
-import com.edcan.howtosunrin.utill.SharedUtil
 import com.edcan.howtosunrin.utill.qna.Question
 import com.edcan.howtosunrin.utill.qna.QuestionUtil
 import kotlinx.coroutines.CoroutineScope
@@ -19,10 +15,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SaveQuestionDialog(context : Context, val questionData : Question) {
+class SaveQuestionDialog(val context : Context, val questionData : Question) {
     private val dialog = Dialog(context)
 
-    fun start(context: Context) = with(dialog){
+    fun start() = with(dialog){
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.dialog_save_question)
 
@@ -37,12 +33,16 @@ class SaveQuestionDialog(context : Context, val questionData : Question) {
         }
         findViewById<Button>(R.id.btn_saveQnADialog_delete).apply {
             setOnClickListener {
+
                 CoroutineScope(Dispatchers.IO).launch {
                     saveQuestionDB.questionDao().delete(questionData)
                     withContext(Dispatchers.Main){
                         dialog.dismiss()
+
+                        Toast.makeText(context, "질문이 삭제되었습니다.", Toast.LENGTH_LONG).show()
                     }
                 }
+
             }
         }
         findViewById<Button>(R.id.btn_saveQnADialog_ok).apply {
