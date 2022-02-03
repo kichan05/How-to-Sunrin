@@ -15,11 +15,15 @@ import com.edcan.howtosunrin.ui.main.MainActivity
 import com.edcan.howtosunrin.ui.onboard.OnBoardActivity
 import com.edcan.howtosunrin.ui.onboard.OnBoardFragment
 import com.edcan.howtosunrin.ui.userData.UserDataActivity
+import com.edcan.howtosunrin.utill.qna.Question
+import com.edcan.howtosunrin.utill.qna.QuestionDatabase
 import kotlinx.coroutines.*
 
 lateinit var qnaDB : DB
 lateinit var userDB: UserDB
 lateinit var chatDB: ChatDB
+
+lateinit var saveQuestionDB : QuestionDatabase
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +35,8 @@ class SplashActivity : AppCompatActivity() {
         qnaDB = DB()
         userDB = UserDB()
         chatDB = ChatDB()
+
+        saveQuestionDB = QuestionDatabase.getInstance(applicationContext)
 
         SharedUtil.pref = getSharedPreferences("pref", Activity.MODE_PRIVATE)
         SharedUtil.editor = SharedUtil.pref.edit()
