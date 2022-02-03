@@ -12,6 +12,7 @@ import com.edcan.howtosunrin.databinding.ActivityMainBinding
 import com.edcan.howtosunrin.utill.user.User
 import com.edcan.howtosunrin.ui.chat.ChatActivity
 import com.edcan.howtosunrin.ui.qnaSlider.QnASliderActivity
+import com.edcan.howtosunrin.ui.savequestion.SaveQuestionActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     lateinit var currentUserData : User
@@ -25,6 +26,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             imgMainIcon.setOnClickListener{gotoWebEDCAN}
             btnMainGotoQnASlider.setOnClickListener(gotoActivityQnA)
             btnMainGotoGroupChat.setOnClickListener(gotoActivityChat)
+            btnMainGotoSaveQnA.setOnClickListener(gotoActivitySaveQnA)
         }
     }
 
@@ -36,6 +38,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private val gotoActivityChat = { _: View ->
         val intent = Intent(this, ChatActivity::class.java)
         intent.putExtra("userData", currentUserData)
+        startActivity(intent)
+    }
+
+    private val gotoActivitySaveQnA = { _ : View ->
+        val intent = Intent(this, SaveQuestionActivity::class.java)
         startActivity(intent)
     }
 }

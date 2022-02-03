@@ -7,11 +7,14 @@ import java.io.Serializable
 
 @Entity(tableName = "save_questions")
 data class Question(
+    @PrimaryKey(autoGenerate = true)
+    var _id : Int = 0,
+
     @ColumnInfo(name = "question")
-    val question : String = "", //질문
+    var question : String = "", //질문
 
     @ColumnInfo(name = "answer")
-    val answer : String = "", //질문에 대한 답
+    var answer : String = "", //질문에 대한 답
 ) : Serializable
 
 // 질문 하나를 저장하는 클래스

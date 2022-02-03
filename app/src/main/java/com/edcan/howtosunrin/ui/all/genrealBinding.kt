@@ -3,8 +3,12 @@ package com.edcan.howtosunrin.ui.all
 import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingConversion
+import androidx.databinding.ObservableArrayList
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.airbnb.lottie.LottieAnimationView
+import com.edcan.howtosunrin.ui.savequestion.SaveQnARecyclerAdapter
+import com.edcan.howtosunrin.utill.qna.Question
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -26,4 +30,14 @@ fun bindTapLayoutMediator(tabLayout: TabLayout, viewPager2: ViewPager2){
             isFocusable = false
         }
     }.attach()
+}
+
+@BindingAdapter("bindSaveQnAItems")
+fun bindSaveQnAItems(recyclerView: RecyclerView, items : ObservableArrayList<Question>?){
+    val adapter = recyclerView.adapter as SaveQnARecyclerAdapter? ?: return
+
+    if(items == null) return
+
+
+    adapter.submitList(items.toMutableList())
 }

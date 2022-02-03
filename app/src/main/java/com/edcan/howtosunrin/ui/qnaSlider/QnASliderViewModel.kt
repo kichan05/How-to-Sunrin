@@ -3,15 +3,16 @@ package com.edcan.howtosunrin.ui.qnaSlider
 import android.util.Log
 import androidx.databinding.ObservableArrayList
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.viewpager2.widget.ViewPager2
 import com.edcan.howtosunrin.utill.qna.Question
 import com.edcan.howtosunrin.ui.splash.qnaDB
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.edcan.howtosunrin.ui.splash.saveQuestionDB
+import com.edcan.howtosunrin.utill.qna.QuestionDatabase
+import kotlinx.coroutines.*
 
 class QnASliderViewModel : ViewModel() {
     val questionList = ObservableArrayList<Fragment>()
@@ -34,7 +35,6 @@ class QnASliderViewModel : ViewModel() {
         }
     }
 
-
     private suspend fun getAllQuestion() : List<Question>{
         return qnaDB.getAllQuestion()
     }
@@ -51,4 +51,12 @@ class QnASliderViewModel : ViewModel() {
 
         questionList.addAll(fragments)
     }
+
+    fun saveQuestion(questionData : Question) {
+        viewModelScope.launch(Dispatchers.IO){
+            saveQuestionDB.questionDao().insert(questionData)
+        }
+    }
+
+    fun getCurrentQuestion() : Question = (questionList[currentPage] as QnAFragment).question
 }
