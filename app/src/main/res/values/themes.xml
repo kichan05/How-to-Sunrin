@@ -12,6 +12,7 @@
         <item name="buttonBackgroundColor">@color/EDCAN</item>
 
         <item name="editTextBackground">@color/gray1</item>
+        <item name="editTextTextColor">@color/white</item>
 
         <item name="toolBarBackGroundColor">@color/white</item>
 
@@ -48,6 +49,7 @@
     </style>
 
     <style name="customEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">?attr/editTextTextColor</item>
         <item name="android:background">@drawable/ic_square_round</item>
         <item name="backgroundTint">?attr/editTextBackground</item>
     </style>

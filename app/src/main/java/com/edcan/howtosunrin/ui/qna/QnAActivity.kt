@@ -20,14 +20,5 @@ class QnAActivity : AppCompatActivity() {
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-
-        binding.imgQnaPrev.setOnClickListener {
-            finish()
-        }
-
-        binding.imgQnaEdcanIcon.setOnClickListener{
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://edcan.kr"))
-            startActivity(intent)
-        }
     }
 }

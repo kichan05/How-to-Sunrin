@@ -27,15 +27,13 @@ abstract class BaseActivity<D : ViewDataBinding>(
         binding.lifecycleOwner = this
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        return super.onCreateOptionsMenu(menu)
-//        menuInflater.inflate(R.menu.toolbar_action, menu)
-//
-//        return true
-//    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.toolbar_action, menu)
+        return true
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
+        when(item.itemId){
             R.id.action_gotoEDCAN -> gotoWebEDCAN()
         }
 
