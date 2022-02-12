@@ -69,6 +69,20 @@ class QnASliderViewModel : ViewModel() {
         }
     }
 
+    fun removeQuestion(questionData: Question) {
+        viewModelScope.launch(Dispatchers.IO){
+            saveQuestionDB.questionDao().deleteQuestion(questionData.question)
+
+            val temp_list = saveQnaList.filter { it.question != questionData.question }
+            saveQnaList.clear()
+            saveQnaList.addAll(temp_list)
+
+            withContext(Dispatchers.Main){ saveQuestionListIncludeCurrentQuestion() }
+
+//            Log.d("delete", "삭제함 ${saveQuestionDB.questionDao().getAll().toList()}")
+        }
+    }
+
     fun getCurrentQuestion() : Question? {
         return if(0 <= currentPage && currentPage < questionList.size)
             (questionList[currentPage] as QnAFragment).question

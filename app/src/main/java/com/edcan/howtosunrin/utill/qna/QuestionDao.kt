@@ -15,4 +15,7 @@ interface QuestionDao {
 
     @Delete
     fun delete(question: Question)
+
+    @Query("DELETE FROM save_questions WHERE question = :question")
+    fun deleteQuestion(question : String)
 }

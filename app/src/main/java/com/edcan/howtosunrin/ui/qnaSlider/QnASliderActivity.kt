@@ -41,6 +41,8 @@ class QnASliderActivity : BaseActivity<ActivityQnaSliderBinding>(R.layout.activi
             btnQnaShare.setOnClickListener{ shareQuestion(this@QnASliderActivity, getCurrentQuestion()!!) }
 
             btnQnaSaveQuestion.setOnClickListener { saveQuestion(getCurrentQuestion()!!) }
+
+            btnQnaRemoveQuestion.setOnClickListener { removeQuestion(getCurrentQuestion()!!) }
         }
 
 //        viewModel.isCurrentQnASave.observe(this){
@@ -52,6 +54,11 @@ class QnASliderActivity : BaseActivity<ActivityQnaSliderBinding>(R.layout.activi
     fun saveQuestion(questionData : Question) {
         viewModel.saveQuestion(questionData)
         Toast.makeText(this, "질문을 추가했습니다.", Toast.LENGTH_LONG).show()
+    }
+
+    fun removeQuestion(questionData: Question) {
+        viewModel.removeQuestion(questionData)
+        Toast.makeText(this, "질문을 저장을 취소했습니다.", Toast.LENGTH_LONG).show()
     }
 
     fun getCurrentQuestion() = viewModel.getCurrentQuestion()
