@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.HowToSunrin" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.HowToSunrin" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/EDCAN</item>
         <item name="colorPrimaryVariant">@color/EDCAN</item>
@@ -10,6 +10,9 @@
 
         <item name="buttonTextColor">@color/white</item>
         <item name="buttonBackgroundColor">@color/EDCAN</item>
+        <item name="buttonBorderColor">@color/EDCAN</item>
+
+        <item name="reversedButtonFontColor">@color/EDCAN</item>
 
         <item name="editTextBackground">@color/gray1</item>
         <item name="editTextTextColor">@color/black</item>
@@ -26,7 +29,7 @@
 
         <!-- Customize your theme here. -->
         <item name="android:textViewStyle">@style/customTextStyle</item>
-        <item name="android:buttonStyle">@style/customButtonStyle</item>
+        <item name="android:buttonStyle">@style/defaultButtonStyle</item>
         <item name="editTextStyle">@style/customEditTextStyle</item>
         <item name="toolbarStyle">@style/customToolbarStyle</item>
     </style>
@@ -36,21 +39,28 @@
         <item name="android:fontFamily">@font/font</item>
     </style>
 
-    <style name="customButtonStyle" parent="Widget.AppCompat.Button">
+    <style name="customButtonTheme" parent="Widget.AppCompat.Button">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">?attr/buttonTextColor</item>
         <item name="android:textFontWeight">800</item>
         <item name="android:fontFamily">@font/font</item>
 
-        <item name="android:background">@drawable/ic_square_round</item>
-        <item name="android:backgroundTint">?attr/buttonBackgroundColor</item>
-
         <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="defaultButtonStyle" parent="customButtonTheme">
+        <item name="android:background">@drawable/default_button_round</item>
+    </style>
+
+    <style name="reversedButtonStyle" parent="customButtonTheme">
+        <item name="android:background">@drawable/default_button_round_stroke</item>
+
+        <item name="android:textColor">?attr/reversedButtonFontColor</item>
     </style>
 
     <style name="customEditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:textColor">?attr/editTextTextColor</item>
-        <item name="android:background">@drawable/ic_square_round</item>
+        <item name="android:background">@drawable/default_rect_round</item>
         <item name="backgroundTint">?attr/editTextBackground</item>
     </style>
 

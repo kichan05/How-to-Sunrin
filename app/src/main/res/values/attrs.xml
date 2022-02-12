@@ -4,10 +4,12 @@
 
     <attr name="buttonTextColor" format="color"/>
     <attr name="buttonBackgroundColor" format="color"/>
+    <attr name="buttonBorderColor" format="color"/>
+
+    <attr name="reversedButtonFontColor" format="color"/>
 
     <attr name="editTextBackGroundColor" type="color"/>
     <attr name="editTextTextColor" type="color"/>
-
 
     <attr name="toolBarBackGroundColor" format="color"/>
 </resources>

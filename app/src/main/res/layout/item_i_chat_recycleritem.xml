@@ -47,7 +47,7 @@
             android:textColor="@color/white"
             android:textFontWeight="400"
 
-            android:background="@drawable/ic_square_round"
+            android:background="@drawable/default_rect_round"
             android:backgroundTint="@color/EDCAN"
 
             android:paddingVertical="8dp"

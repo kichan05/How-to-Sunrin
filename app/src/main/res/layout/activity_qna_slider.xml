@@ -43,17 +43,6 @@
             />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="@{viewModel.isCurrentQnASave + ``}"
-
-            app:layout_constraintBottom_toTopOf="@id/txt_qna_msg"
-            app:layout_constraintStart_toStartOf="@id/guide_qna_line1"
-            app:layout_constraintEnd_toEndOf="@id/guide_qna_line2"
-            />
-
-        <TextView
             android:id="@+id/txt_qna_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,6 +90,8 @@
                 android:id="@+id/btn_qna_removeQuestion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+
+                style="@style/reversedButtonStyle"
 
                 android:layout_weight="1"
 

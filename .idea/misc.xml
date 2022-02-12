@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/DO_NOT_DELETE/Coding/Project/How-to-Sunrin/app/src/main/res/layout/activity_user_data.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/drawable/default_button_round.xml" value="0.1925" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/drawable/default_rect_round_solid.xml" value="0.1925" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/drawable/default_round_10.xml" value="0.3697916666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/drawable/ic_arrow_left.xml" value="0.239" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/drawable/ic_dot_nomal.xml" value="0.124" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/drawable/ic_dot_select.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/drawable/ic_square_round.xml" value="0.12777777777777777" />
@@ -16,7 +19,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/layout/activity_on_board.xml" value="0.30337078651685395" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/layout/activity_qna.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/layout/activity_qna_slider.xml" value="0.30337078651685395" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/layout/activity_qna_slider.xml" value="0.5" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/layout/activity_save_question.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/layout/activity_user_data.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/user/AndroidStudioProjects/EDCAN/How-to-Sunrin/app/src/main/res/layout/dialog_save_question.xml" value="0.33" />

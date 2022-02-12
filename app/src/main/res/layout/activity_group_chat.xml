@@ -76,7 +76,7 @@
                 android:text="@={viewModel.content}"
                 android:textSize="20sp"
 
-                android:background="@drawable/ic_square_round"
+                android:background="@drawable/default_rect_round"
                 android:backgroundTint="@color/gray3"
 
                 android:paddingHorizontal="4dp"
