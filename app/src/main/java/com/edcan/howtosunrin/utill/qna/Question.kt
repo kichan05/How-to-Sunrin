@@ -15,6 +15,12 @@ data class Question(
 
     @ColumnInfo(name = "answer")
     var answer : String = "", //질문에 대한 답
-) : Serializable
+) : Serializable {
+    fun checkEqualExcludeId(diffQuestion: Question) : Boolean {
+
+        return question == diffQuestion.question && answer == diffQuestion.answer
+
+    }
+}
 
 // 질문 하나를 저장하는 클래스

@@ -41,3 +41,8 @@ fun bindSaveQnAItems(recyclerView: RecyclerView, items : ObservableArrayList<Que
 
     adapter.submitList(items.toMutableList())
 }
+
+@BindingAdapter("bindVisibility")
+fun bindVisibility(v : View, visibility : Boolean){
+    v.visibility = if(visibility) View.VISIBLE else View.GONE
+}

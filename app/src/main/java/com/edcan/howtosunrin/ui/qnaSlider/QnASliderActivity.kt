@@ -38,13 +38,15 @@ class QnASliderActivity : BaseActivity<ActivityQnaSliderBinding>(R.layout.activi
             vpQna.adapter = ViewPagerAdapter(this@QnASliderActivity, mutableListOf())
             vpQna.registerOnPageChangeCallback(viewModel!!.sliderCallback)
 
-            btnQnaShare.setOnClickListener{ shareQuestion(this@QnASliderActivity, getCurrentQuestion()) }
+            btnQnaShare.setOnClickListener{ shareQuestion(this@QnASliderActivity, getCurrentQuestion()!!) }
 
-            btnQnaSaveQuestion.setOnClickListener { saveQuestion(getCurrentQuestion()) }
+            btnQnaSaveQuestion.setOnClickListener { saveQuestion(getCurrentQuestion()!!) }
         }
+
+//        viewModel.isCurrentQnASave.observe(this){
+//            Log.d("isCurrentQnASave", it.toString())
+//        }
     }
-
-
 
 
     fun saveQuestion(questionData : Question) {

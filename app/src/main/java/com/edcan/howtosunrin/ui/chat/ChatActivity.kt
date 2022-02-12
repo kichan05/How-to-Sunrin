@@ -55,6 +55,7 @@ class ChatActivity : BaseActivity<ActivityGroupChatBinding>(R.layout.activity_gr
                 }
 
                 groupChat_RecyclerAdapter.submitList(chatList)
+                binding.recyclerGroupchat.smoothScrollToPosition(chatList.size)
             }
 
 
