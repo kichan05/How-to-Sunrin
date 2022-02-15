@@ -25,6 +25,7 @@ class SaveQuestionActivity : BaseActivity<ActivitySaveQuestionBinding>(R.layout.
         binding.btnSaveQnAGotoQnA.setOnClickListener {
             val intent = Intent(this, QnASliderActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
         }
 
         viewModel.getSaveQuestions()

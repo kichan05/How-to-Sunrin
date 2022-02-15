@@ -53,6 +53,7 @@ class UserDataActivity : BaseActivity<ActivityUserDataBinding>(R.layout.activity
                 intent.putExtra("userData", viewModel.userData)
                 startActivity(intent)
                 finish()
+                overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
             }
         }
     }

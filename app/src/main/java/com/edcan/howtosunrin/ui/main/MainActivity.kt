@@ -34,16 +34,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private val gotoActivityQnA = { _: View ->
         val intent = Intent(this, QnASliderActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
     }
 
     private val gotoActivityChat = { _: View ->
         val intent = Intent(this, ChatActivity::class.java)
         intent.putExtra("userData", currentUserData)
         startActivity(intent)
+        overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
     }
 
     private val gotoActivitySaveQnA = { _ : View ->
         val intent = Intent(this, SaveQuestionActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
     }
 }

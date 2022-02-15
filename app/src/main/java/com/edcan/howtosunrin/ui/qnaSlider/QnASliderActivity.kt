@@ -44,12 +44,7 @@ class QnASliderActivity : BaseActivity<ActivityQnaSliderBinding>(R.layout.activi
 
             btnQnaRemoveQuestion.setOnClickListener { removeQuestion(getCurrentQuestion()!!) }
         }
-
-//        viewModel.isCurrentQnASave.observe(this){
-//            Log.d("isCurrentQnASave", it.toString())
-//        }
     }
-
 
     fun saveQuestion(questionData : Question) {
         viewModel.saveQuestion(questionData)

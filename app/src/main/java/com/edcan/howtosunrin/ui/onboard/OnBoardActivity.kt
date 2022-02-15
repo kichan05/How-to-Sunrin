@@ -37,6 +37,7 @@ class OnBoardActivity : BaseActivity<ActivityOnBoardBinding>(R.layout.activity_o
         startActivity(intent)
 
         super.finish()
+        overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
     }
 
     fun getFragments() : List<Fragment> = listOf(

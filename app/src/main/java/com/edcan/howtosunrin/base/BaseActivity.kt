@@ -40,6 +40,10 @@ abstract class BaseActivity<D : ViewDataBinding>(
         return true
     }
 
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.anim_hold, R.anim.anim_slide_to_right)
+    }
 
     protected val gotoWebEDCAN = {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://edcan.kr"))
