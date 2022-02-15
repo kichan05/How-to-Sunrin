@@ -15,8 +15,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/white"
 
         android:paddingHorizontal="20dp"
         android:paddingVertical="5dp">
@@ -28,6 +26,7 @@
 
             android:text="@{userData.name}"
             tools:text="박희찬"
+            android:textColor="@color/EDCAN"
             android:textSize="12sp"
 
             android:gravity="center"

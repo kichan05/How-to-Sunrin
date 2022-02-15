@@ -15,8 +15,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/white"
 
         android:paddingHorizontal="20dp"
         android:paddingVertical="5dp">
@@ -29,7 +27,6 @@
             android:text="@{userData.name}"
             tools:text="바키찬"
             android:textSize="12sp"
-            android:textColor="@color/black"
 
             android:gravity="center"
 
@@ -45,6 +42,7 @@
             android:text="@{chatData.content}"
             tools:text="EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야"
             android:textSize="14sp"
+            android:textColor="@color/black"
             android:textFontWeight="400"
 
             android:background="@drawable/default_rect_round"
