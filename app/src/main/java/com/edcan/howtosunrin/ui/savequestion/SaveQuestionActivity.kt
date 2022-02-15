@@ -3,11 +3,12 @@ package com.edcan.howtosunrin.ui.savequestion
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.databinding.ObservableArrayList
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.base.BaseActivity
 import com.edcan.howtosunrin.databinding.ActivitySaveQuestionBinding
-import com.edcan.howtosunrin.ui.qna.QnAActivity
+import com.edcan.howtosunrin.ui.all.recyclerDeco.VerticalSpaceItemDecoration
 import com.edcan.howtosunrin.ui.qnaSlider.QnASliderActivity
 
 class SaveQuestionActivity : BaseActivity<ActivitySaveQuestionBinding>(R.layout.activity_save_question) {
@@ -30,5 +31,7 @@ class SaveQuestionActivity : BaseActivity<ActivitySaveQuestionBinding>(R.layout.
 
         val saveQnaListAdapter = SaveQnARecyclerAdapter()
         binding.recyclerSaveQnA.adapter = saveQnaListAdapter
+//        binding.recyclerSaveQnA.addItemDecoration(VerticalSpaceItemDecoration(20))
+        binding.recyclerSaveQnA.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager(this).orientation))
     }
 }

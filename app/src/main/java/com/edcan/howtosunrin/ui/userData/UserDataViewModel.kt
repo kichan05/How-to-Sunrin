@@ -12,25 +12,8 @@ import java.util.*
 
 class UserDataViewModel : ViewModel() {
     val name = MutableLiveData("")
-    val major = MutableLiveData(0)
-    val newbie = MutableLiveData(false)
 
     lateinit var userData : User
-
-    val choiceMajorCallBack = object : AdapterView.OnItemSelectedListener{
-        override fun onItemSelected(
-            parent: AdapterView<*>?,
-            view: View?,
-            position: Int,
-            id: Long
-        ) {
-            major.value = position
-        }
-
-        override fun onNothingSelected(parent: AdapterView<*>?) {
-
-        }
-    }
 
     suspend fun saveUserData() : Int{
 
@@ -40,9 +23,7 @@ class UserDataViewModel : ViewModel() {
 
         userData = User(
             name = name.value!!,
-            major = major.value!!,
             userID = userId,
-            newbie = newbie.value!!
         )
 
         return userDB.saveUserData(userData)

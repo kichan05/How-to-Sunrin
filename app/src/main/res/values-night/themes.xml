@@ -16,8 +16,9 @@
 
         <item name="editTextBackground">@color/gray1</item>
         <item name="editTextTextColor">@color/black</item>
+        <item name="editTextHintColor">@color/gray6</item>
 
-        <item name="toolBarBackGroundColor">@color/black</item>
+        <item name="toolBarBackGroundColor">@color/gray8</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/EDCAN</item>

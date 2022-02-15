@@ -3,9 +3,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="gray1">#E9E9E9</color>
-    <color name="gray2">#D3D6DB</color>
-    <color name="gray3">#C4C4C4</color>
+
+    <color name="gray0">#E9E9E9</color>
+    <color name="gray1">#D3D6DB</color>
+    <color name="gray2">#C4C4C4</color>
+    <color name="gray3">#dee2e6</color>
+    <color name="gray4">#ced4da</color>
+    <color name="gray5">#adb5bd</color>
+    <color name="gray6">#868e96</color>
+    <color name="gray7">#495057</color>
+    <color name="gray8">#343a40</color>
+    <color name="gray9">#212529</color>
 
     <color name="EDCAN">#00B8D4</color>
 </resources>

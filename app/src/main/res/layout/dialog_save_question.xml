@@ -73,7 +73,7 @@
 
             style="@style/reversedButtonStyle"
 
-            android:text="저장 삭제하기"
+            android:text="삭제하기"
 
             android:layout_marginVertical="8dp"
             />

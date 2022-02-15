@@ -10,6 +10,7 @@
 
     <attr name="editTextBackGroundColor" type="color"/>
     <attr name="editTextTextColor" type="color"/>
+    <attr name="editTextHintColor" type="color"/>
 
     <attr name="toolBarBackGroundColor" format="color"/>
 </resources>

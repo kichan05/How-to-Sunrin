@@ -22,8 +22,6 @@ import kotlinx.coroutines.withContext
 class UserDataActivity : BaseActivity<ActivityUserDataBinding>(R.layout.activity_user_data) {
     lateinit var viewModel: UserDataViewModel
 
-    val majorArray = arrayOf("학과를 선택해주세요.", "정보보호과", "소프트웨어과", "IT경영과", "콘텐츠 디자인과")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(UserDataViewModel::class.java)
@@ -31,9 +29,6 @@ class UserDataActivity : BaseActivity<ActivityUserDataBinding>(R.layout.activity
 
         with(binding){
             btnUserDataInputEnd.setOnClickListener(createUserData)
-
-            spinnerUserDataChoiceMajor.adapter = ArrayAdapter(this@UserDataActivity, android.R.layout.simple_spinner_dropdown_item, majorArray)
-            spinnerUserDataChoiceMajor.onItemSelectedListener = viewModel!!.choiceMajorCallBack
         }
     }
 
@@ -42,17 +37,11 @@ class UserDataActivity : BaseActivity<ActivityUserDataBinding>(R.layout.activity
             binding.edtUserDataInputName.error = "이름을 입력해주세요."
             return@createUserData
         }
-        else if (viewModel.major.value!! == 0){
-            //todo
-            Toast.makeText(this, "학과를 선택해주세요.", Toast.LENGTH_LONG).show()
-            return@createUserData
-        }
 
         CoroutineScope(Dispatchers.IO).launch {
             val result = viewModel.saveUserData()
 
             withContext(Dispatchers.Main){
-                //todo
                 if(result != UserUtil.ResultSuccess){
                     Toast.makeText(this@UserDataActivity, "유저 등록에 실패했습니다.", Toast.LENGTH_LONG).show()
                     return@withContext
