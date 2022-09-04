@@ -42,11 +42,10 @@
             android:text="@{chatData.content}"
             tools:text="EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야 EDCAN은 정말 최고야"
             android:textSize="14sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textFontWeight="400"
 
-            android:background="@drawable/default_rect_round"
-            android:backgroundTint="@color/gray2"
+            android:background="@drawable/sh_chat_item_you"
 
             android:paddingVertical="8dp"
             android:paddingHorizontal="10dp"
