@@ -42,17 +42,17 @@ class OnBoardActivity : BaseActivity<ActivityOnBoardBinding>(R.layout.activity_o
 
     fun getFragments() : List<Fragment> = listOf(
         OnBoardFragment(OnBoard(
-            "https://assets4.lottiefiles.com/packages/lf20_tcwozhzv/MarketingCampaignsViralMethods.json",
+            R.raw.onboard1,
             "설레이는 선린 생활",
             "정말 오고싶었던 선린\n선린 생활이 기대되지 않으신가요?"
         )),
         OnBoardFragment(OnBoard(
-            "https://assets4.lottiefiles.com/packages/lf20_hi95bvmx/WebdesignBg.json",
+            R.raw.onboard2,
             "궁금한게 많은 선린생활",
             "어떻게 하면 선린생활을\n잘할수있을지 알고싶으신가요?"
         )),
         OnBoardFragment(OnBoard(
-            "https://assets3.lottiefiles.com/packages/lf20_y5kf5v3b.json",
+            R.raw.onboard3,
             "How to Sunrin\n을 사용해보세요",
             "How to Sunrin에서는\n선린생활에 대한\n다양한 궁금증을 해결할수있습니다."
         )),

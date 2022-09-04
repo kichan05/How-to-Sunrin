@@ -22,6 +22,11 @@ fun bindLottieUrl(v : LottieAnimationView, url : String){
     v.setAnimationFromUrl(url)
 }
 
+@BindingAdapter("bindLottieJson")
+fun bindLottieJson(v : LottieAnimationView, raw : Int){
+    v.setAnimation(raw)
+}
+
 @BindingAdapter("bindTapLayoutMediator")
 fun bindTapLayoutMediator(tabLayout: TabLayout, viewPager2: ViewPager2){
     TabLayoutMediator(tabLayout, viewPager2){ tab : TabLayout.Tab, _ ->

@@ -61,7 +61,7 @@
 
                 android:adjustViewBounds="true"
 
-                app:bindLottieUrl="@{`https://assets8.lottiefiles.com/packages/lf20_3ktmthuy.json`}"
+                app:bindLottieJson="@{viewModel.animationId}"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
 
