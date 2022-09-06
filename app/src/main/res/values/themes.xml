@@ -64,6 +64,7 @@
         <item name="android:textColorHint">?attr/editTextHintColor</item>
         <item name="android:background">@drawable/default_rect_round</item>
         <item name="backgroundTint">?attr/editTextBackground</item>
+        <item name="android:paddingHorizontal">12dp</item>
     </style>
 
     <style name="customToolbarStyle" parent="Widget.AppCompat.Toolbar">

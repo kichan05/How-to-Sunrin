@@ -76,7 +76,6 @@
                 android:background="@drawable/default_rect_round"
                 android:backgroundTint="@color/gray3"
 
-                android:paddingHorizontal="4dp"
                 android:paddingVertical="8dp"
 
                 app:layout_constraintBottom_toBottomOf="parent"

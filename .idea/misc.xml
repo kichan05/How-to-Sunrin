@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Android/How-to-Sunrin/app/src/main/res/drawable/sh_chat_item_i.xml" value="0.292" />
         <entry key="..\:/Android/How-to-Sunrin/app/src/main/res/drawable/sh_chat_item_you.xml" value="0.293" />
+        <entry key="..\:/Android/How-to-Sunrin/app/src/main/res/layout/activity_group_chat.xml" value="0.22" />
         <entry key="..\:/Android/How-to-Sunrin/app/src/main/res/layout/activity_save_question.xml" value="0.18489583333333334" />
         <entry key="..\:/Android/How-to-Sunrin/app/src/main/res/layout/fragment_on_board.xml" value="0.35885416666666664" />
         <entry key="..\:/Android/How-to-Sunrin/app/src/main/res/layout/item_i_chat_recycleritem.xml" value="0.2609375" />
