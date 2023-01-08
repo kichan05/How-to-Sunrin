@@ -15,18 +15,18 @@ import com.edcan.howtosunrin.ui.qnaSlider.QnASliderActivity
 import com.edcan.howtosunrin.ui.savequestion.SaveQuestionActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
-    lateinit var currentUserData : User
+//    lateinit var currentUserData : User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        currentUserData = intent.getSerializableExtra("userData") as User
+//        currentUserData = intent.getSerializableExtra("userData") as User
 
         with(binding){
             imgMainIcon.setOnClickListener { gotoWebEDCAN() }
 
             btnMainGotoQnASlider.setOnClickListener(gotoActivityQnA)
-            btnMainGotoGroupChat.setOnClickListener(gotoActivityChat)
+//            btnMainGotoGroupChat.setOnClickListener(gotoActivityChat)
             btnMainGotoSaveQnA.setOnClickListener(gotoActivitySaveQnA)
         }
     }
@@ -37,12 +37,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
     }
 
-    private val gotoActivityChat = { _: View ->
-        val intent = Intent(this, ChatActivity::class.java)
-        intent.putExtra("userData", currentUserData)
-        startActivity(intent)
-        overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
-    }
+//    private val gotoActivityChat = { _: View ->
+//        val intent = Intent(this, ChatActivity::class.java)
+//        intent.putExtra("userData", currentUserData)
+//        startActivity(intent)
+//        overridePendingTransition(R.anim.anim_slide_from_right, R.anim.anim_hold)
+//    }
 
     private val gotoActivitySaveQnA = { _ : View ->
         val intent = Intent(this, SaveQuestionActivity::class.java)

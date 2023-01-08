@@ -9,11 +9,11 @@ import com.edcan.howtosunrin.R
 import com.edcan.howtosunrin.base.BaseActivity
 import com.edcan.howtosunrin.databinding.ActivityOnBoardBinding
 import com.edcan.howtosunrin.ui.all.ViewPagerAdapter
+import com.edcan.howtosunrin.ui.main.MainActivity
 import com.edcan.howtosunrin.ui.userData.UserDataActivity
 import com.edcan.howtosunrin.utill.OnBoard
 
 class OnBoardActivity : BaseActivity<ActivityOnBoardBinding>(R.layout.activity_on_board) {
-
     val viewModel : OnBoardViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,7 @@ class OnBoardActivity : BaseActivity<ActivityOnBoardBinding>(R.layout.activity_o
     }
 
     override fun finish() {
-        val intent = Intent(this, UserDataActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
 
         super.finish()
