@@ -45,12 +45,18 @@
         <item name="android:textColor">?attr/buttonTextColor</item>
         <item name="android:textFontWeight">800</item>
         <item name="android:fontFamily">@font/font</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:stateListAnimator">@null</item>
 
         <item name="android:textAllCaps">false</item>
     </style>
 
     <style name="defaultButtonStyle" parent="customButtonTheme">
         <item name="android:background">@drawable/default_button_round</item>
+        <item name="android:layout_gravity">center</item>
+
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">26dp</item>
     </style>
 
     <style name="reversedButtonStyle" parent="customButtonTheme">

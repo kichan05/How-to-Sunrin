@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
 
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp"
+            app:layout_constraintGuide_begin="24dp"
             />
 
         <androidx.constraintlayout.widget.Guideline
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
 
             android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp"
+            app:layout_constraintGuide_end="24dp"
             />
 
         <androidx.appcompat.widget.Toolbar
@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
 
             android:text="오픈소스 라이브러리"
+            android:textSize="20sp"
 
             android:layout_marginTop="20dp"
 
@@ -62,6 +63,7 @@
             android:layout_height="wrap_content"
 
             android:text="동아리 정보 보기"
+            android:textSize="20sp"
 
             android:layout_marginTop="20dp"
 
@@ -76,6 +78,7 @@
             android:layout_height="wrap_content"
 
             android:text="개발자 정보 보기"
+            android:textSize="20sp"
 
             android:layout_marginTop="20dp"
 
@@ -91,6 +94,7 @@
             android:layout_height="wrap_content"
 
             android:text="개발자 후원"
+            android:textSize="20sp"
             android:backgroundTint="@color/edcan_navy"
 
             android:layout_marginBottom="20dp"
